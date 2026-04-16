@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import Tooltip from "./Tooltip";
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Design System/Tooltip",
+  title: "Design System/Data Display/Tooltip",
   component: Tooltip,
   parameters: {
     layout: "centered",

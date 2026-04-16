@@ -4,7 +4,7 @@ import { Face } from "@mui/icons-material";
 import Chip from "./Chip";
 
 const meta: Meta<typeof Chip> = {
-  title: "Design System/Chip",
+  title: "Design System/Data Display/Chip",
   component: Chip,
   parameters: {
     layout: "centered",

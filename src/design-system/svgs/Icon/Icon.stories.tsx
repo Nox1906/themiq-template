@@ -63,7 +63,7 @@ const IconGrid = ({
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
-  title: "Design System/Icon",
+  title: "Design System/Data Display/Icon",
   tags: ["autodocs"],
   argTypes: {
     name: {
