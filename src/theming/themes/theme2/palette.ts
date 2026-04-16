@@ -1,0 +1,93 @@
+import primitives from "../primitives";
+import type { ThemeSpecPalette } from "../spec/pallete";
+
+const palette: ThemeSpecPalette = {
+  primary: {
+    main: primitives.blue[500],
+    light: primitives.blue[50],
+    dark: primitives.blue[700],
+    "0": primitives.blue[0],
+    "100": primitives.blue[100],
+    "300": primitives.blue[300],
+    "700": primitives.blue[700],
+    "900": primitives.blue[900],
+    contrastText: primitives.white,
+  },
+  secondary: {
+    main: primitives.stone[500],
+    light: primitives.stone[50],
+    dark: primitives.stone[700],
+    "0": primitives.stone[0],
+    "100": primitives.stone[100],
+    "300": primitives.stone[300],
+    "700": primitives.stone[700],
+    "900": primitives.stone[900],
+    contrastText: primitives.white,
+  },
+  success: {
+    main: primitives.green[500],
+    light: primitives.green[50],
+    dark: primitives.green[700],
+    "0": primitives.green[0],
+    "100": primitives.green[100],
+    "300": primitives.green[300],
+    "700": primitives.green[700],
+    "900": primitives.green[900],
+    contrastText: primitives.white,
+  },
+  warning: {
+    main: primitives.orange[500],
+    light: primitives.orange[50],
+    dark: primitives.orange[700],
+    "0": primitives.orange[0],
+    "100": primitives.orange[100],
+    "300": primitives.orange[300],
+    "700": primitives.orange[700],
+    "900": primitives.orange[900],
+    contrastText: primitives.white,
+  },
+  error: {
+    main: primitives.red[500],
+    light: primitives.red[50],
+    dark: primitives.red[700],
+    "0": primitives.red[0],
+    "100": primitives.red[100],
+    "300": primitives.red[300],
+    "700": primitives.red[700],
+    "900": primitives.red[900],
+    contrastText: primitives.white,
+  },
+  neutral: {
+    main: primitives.stone[500],
+    light: primitives.stone[50],
+    dark: primitives.stone[700],
+    contrastText: primitives.white,
+    "0": primitives.stone[0],
+    "100": primitives.stone[100],
+    "300": primitives.stone[300],
+    "600": primitives.stone[600],
+    "700": primitives.stone[700],
+    "900": primitives.stone[900],
+  },
+  "neutral-dark": {
+    main: primitives.stone[700],
+    light: primitives.stone[100],
+    dark: primitives.stone[900],
+    contrastText: primitives.white,
+  },
+  disabled: {
+    main: primitives.stone[50],
+    light: primitives.stone[0],
+    dark: primitives.stone[100],
+    contrastText: primitives.stone[300],
+  },
+  common: {
+    black: primitives.black,
+    white: primitives.white,
+  },
+  background: {
+    default: primitives.blue[25],
+  },
+};
+
+export default palette;
