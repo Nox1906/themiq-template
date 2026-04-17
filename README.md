@@ -1,73 +1,197 @@
-# React + TypeScript + Vite
+# Chameleon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-theme React platform built with MUI, Vite, and TypeScript. The theme is selected at runtime via a pluggable resolver system — the same codebase serves multiple applications, each with its own visual identity.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Table of Contents
 
-## React Compiler
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+- [Available scripts](#available-scripts)
+- [Project structure](#project-structure)
+- [Architecture overview](#architecture-overview)
+- [Theming system](#theming-system)
+- [Design system](#design-system)
+- [Path aliases](#path-aliases)
+- [Adding a new page / route](#adding-a-new-page--route)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Concern            | Library                                                                  |
+| ------------------ | ------------------------------------------------------------------------ |
+| UI framework       | [React 19](https://react.dev/)                                           |
+| Component library  | [MUI v7](https://mui.com/)                                               |
+| Styling engine     | [Emotion](https://emotion.sh/) + [tss-react](https://www.tss-react.dev/) |
+| Routing            | [React Router v7](https://reactrouter.com/)                              |
+| Build tool         | [Vite](https://vite.dev/)                                                |
+| Language           | TypeScript (strict mode)                                                 |
+| Testing            | [Vitest](https://vitest.dev/)                                            |
+| Component explorer | [Storybook](https://storybook.js.org/)                                   |
+| Utility            | [Ramda](https://ramdajs.com/)                                            |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server (http://localhost:5173)
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Script                    | Description                                    |
+| ------------------------- | ---------------------------------------------- |
+| `npm run dev`             | Start the Vite dev server                      |
+| `npm run build`           | Production build                               |
+| `npm run preview`         | Preview the production build locally           |
+| `npm run typecheck`       | Run TypeScript type-check (app + node configs) |
+| `npm run lint`            | Run ESLint across all source files             |
+| `npm test`                | Run Vitest unit tests                          |
+| `npm run storybook`       | Start Storybook on port 6006                   |
+| `npm run storybook:dev`   | Run Storybook + Vitest concurrently            |
+| `npm run build-storybook` | Build static Storybook output                  |
+
+---
+
+## Project structure
+
 ```
+src/
+├── main.tsx                  # App entry point — BrowserRouter + StrictMode
+├── App.tsx                   # Root component — wraps routes in PlatformTheme
+├── index.css                 # Minimal global fallback styles (box-sizing, margins)
+│
+├── design-system/            # Reusable themed UI components
+│   ├── DataDisplay/          # Badge, Chip, DataGrid, Divider, Icon, List, Tooltip, Typography, …
+│   ├── Feedback/             # Alert, CircularProgress, Dialog, Skeleton, Snackbar
+│   ├── Inputs/               # Autocomplete, Button, Checkbox, Form, Radio, Select, Switch, TextField
+│   ├── Layout/               # Box
+│   ├── Navigation/           # Breadcrumbs, Drawer, Link, Menu, Tabs
+│   ├── Surfaces/             # Accordion, Card, Paper
+│   ├── svgs/                 # Raw SVG components and shared Svg wrapper
+│   ├── utils/                # createStyles, makeStyles
+│   └── index.ts              # Single barrel — import everything from '@/design-system'
+│
+├── theming/                  # Theme selection, spec contracts, and MUI integration
+│   ├── PlatformTheme.tsx     # Root MUI ThemeProvider — calls the active resolver
+│   ├── config.ts             # (deprecated) URL-slug resolver — moved to resolvers/
+│   ├── resolvers/            # Pluggable theme-selection strategies
+│   │   ├── index.ts          # ← EDIT THIS FILE to change the active strategy
+│   │   ├── urlSlug.ts        # Strategy: URL first-path-segment
+│   │   ├── queryParam.ts     # Strategy: ?theme= query parameter
+│   │   ├── userRole.ts       # Strategy: authenticated user role
+│   │   ├── tenant.ts         # Strategy: organisation / tenant ID
+│   │   ├── localStorage.ts   # Strategy: saved browser preference
+│   │   ├── uiToggle.tsx      # Strategy: in-app toggle button
+│   │   ├── osPreference.ts   # Strategy: OS prefers-color-scheme
+│   │   ├── hostname.ts       # Strategy: subdomain / hostname
+│   │   ├── remoteConfig.ts   # Strategy: fetch from internal endpoint
+│   │   ├── abExperiment.ts   # Strategy: SDK-agnostic A/B experiment
+│   │   ├── propInjection.ts  # Strategy: host context / Storybook
+│   │   ├── composed.ts       # Strategy: priority-chain of optional resolvers
+│   │   └── types.ts          # UseThemeResolver / UseOptionalThemeResolver contracts
+│   ├── themes/               # Theme implementations
+│   │   ├── spec/             # TypeScript contracts (ThemeSpec and sub-types)
+│   │   ├── theme1/           # Theme 1 implementation
+│   │   ├── theme2/           # Theme 2 implementation
+│   │   └── types.d.ts        # MUI module augmentation (Shape, BreakpointOverrides)
+│   └── utils.ts/             # getTheme (ThemeSpec → MUI Theme), createShadows
+│
+├── hooks/                    # Shared React hooks
+│   ├── useCheckOverflowOnHover.ts
+│   └── useMergedRef.ts
+│
+├── pages/                    # Route-level page components
+│   └── Main.tsx
+│
+└── validations/              # Pure validation utilities
+    └── isValidURL.ts
+```
+
+---
+
+## Architecture overview
+
+```
+main.tsx
+  └── BrowserRouter
+        └── App.tsx
+              └── PlatformTheme          ← resolves theme name via resolver hook
+                    └── MUI ThemeProvider (active MUI Theme object)
+                          └── Routes / pages
+```
+
+The theme is resolved by a **resolver hook** (`src/theming/resolvers/index.ts`). The resolver is swappable without touching any other file — see [Theming system](#theming-system).
+
+---
+
+## Theming system
+
+See [`src/theming/README.md`](src/theming/README.md) for the complete guide.
+
+**Quick start — change the active strategy:**
+
+Open `src/theming/resolvers/index.ts` and swap the import + factory call. That is the only file that needs to change. Example:
+
+```ts
+// Switch from URL slug to OS dark mode preference
+import { createOsPreferenceResolver } from "./osPreference";
+
+export const useThemeResolver = createOsPreferenceResolver({
+  light: "theme1",
+  dark: "theme2",
+});
+```
+
+**Add a new theme:**
+
+1. Create `src/theming/themes/my-theme/` following the same file structure as `theme1/`
+2. Export it from `src/theming/themes/index.ts`
+3. Add `"my-theme"` to the `name` and `designSystem` unions in `src/theming/themes/spec/index.ts`
+4. Register it in the resolver configuration in `src/theming/resolvers/index.ts`
+
+---
+
+## Design system
+
+See [`src/design-system/README.md`](src/design-system/README.md) for the component catalogue and authoring guide.
+
+**Importing components:**
+
+```ts
+import { Button, Typography, Alert, createStyles } from "@/design-system";
+```
+
+All components, form parts, and styling utilities are exported from the single barrel at `src/design-system/index.ts`.
+
+---
+
+## Path aliases
+
+| Alias               | Resolves to           |
+| ------------------- | --------------------- |
+| `@/design-system`   | `src/design-system`   |
+| `@/design-system/*` | `src/design-system/*` |
+
+Configured in both `tsconfig.app.json` (for TypeScript) and `vite.config.ts` (for the bundler).
+
+---
+
+## Adding a new page / route
+
+1. Create `src/pages/MyPage.tsx`
+2. Add a `<Route>` inside the `<Routes>` in `src/App.tsx`:
+   ```tsx
+   import MyPage from "./pages/MyPage";
+   <Route path="/my-path" element={<MyPage />} />;
+   ```
+3. Use components from `@/design-system` inside the page

@@ -1,5 +1,3 @@
-import * as a11yAddonAnnotations from "@storybook/addon-a11y/preview";
-import { setProjectAnnotations } from "@storybook/react-vite";
-import * as projectAnnotations from "./preview";
-
-setProjectAnnotations([projectAnnotations, a11yAddonAnnotations]);
+// Project annotations are applied automatically by @storybook/addon-vitest
+// since Storybook 10.3. No setup needed here.
+export {};

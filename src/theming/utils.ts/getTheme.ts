@@ -32,11 +32,17 @@ export default function createCustomTheme(theme: ThemeSpec) {
       },
     },
     typography: theme.typography,
-    shape: {
-      borderRadius: theme.borderRadius,
-    },
+    shape: theme.shape,
     spacing: theme.spacing,
     shadows: createShadows(theme.shadows),
+    breakpoints: {
+      values: theme.breakpoints,
+    },
+    transitions: {
+      duration: theme.transitions.duration,
+      easing: theme.transitions.easing,
+    },
+    zIndex: theme.zIndex,
   });
 
   resultTheme.name = theme.name;

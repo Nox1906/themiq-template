@@ -1,3 +1,49 @@
+/**
+ * Design token primitives — the single source of truth for all raw color values.
+ *
+ * These are **not** meant to be used directly in components.
+ * They exist solely to be consumed by theme palette files
+ * (e.g. `theme1/palette.ts`) where they are mapped to semantic roles
+ * (`primary`, `secondary`, `success`, etc.).
+ *
+ * ### Scale system
+ * Each color family uses a numeric scale:
+ *
+ * | Step  | Intended use                                          |
+ * |-------|-------------------------------------------------------|
+ * | `0`   | Lightest tint — near-white backgrounds, subtle fills  |
+ * | `25`  | Very light (blue only) — page default background      |
+ * | `50`  | Very light — hover backgrounds, light chip fills      |
+ * | `100` | Light — borders, dividers, tag backgrounds            |
+ * | `300` | Medium-light — secondary icons, placeholder text      |
+ * | `500` | Base / main color                                     |
+ * | `600` | Slightly darker (stone only)                          |
+ * | `700` | Dark — hover states, dark text on light backgrounds   |
+ * | `900` | Darkest — near-black, high-contrast elements          |
+ *
+ * ### Adding a new primitive family
+ * Follow the same scale pattern and reference the new family in a theme palette:
+ * ```ts
+ * cyan: {
+ *   0:   "#E0F7FA",
+ *   50:  "#B2EBF2",
+ *   100: "#80DEEA",
+ *   300: "#4DD0E1",
+ *   500: "#00BCD4", // ← base
+ *   700: "#0097A7",
+ *   900: "#006064",
+ * },
+ * ```
+ * Then map it in a theme's `palette.ts`:
+ * ```ts
+ * primary: {
+ *   main: primitives.cyan[500],
+ *   light: primitives.cyan[50],
+ *   dark: primitives.cyan[700],
+ *   contrastText: primitives.white,
+ * },
+ * ```
+ */
 export default {
   blue: {
     0: "#E7F2FF",

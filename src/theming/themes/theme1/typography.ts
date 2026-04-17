@@ -1,7 +1,43 @@
 import type { ThemeSpecTypography } from "../spec/typography";
 
+/**
+ * Theme1 typography scale.
+ *
+ * Sizes are in `rem`, computed relative to {@link htmlFontSize} (12 px).
+ * Use `pixelsToRem(n)` to convert a design-spec pixel value to the correct
+ * rem string — all `rem` values in MUI are relative to `htmlFontSize`, not
+ * the browser's 16 px default.
+ *
+ * ### Changing the font family
+ * Replace `fontFamily` with any valid CSS font stack:
+ * ```ts
+ * fontFamily: '"Inter", "Helvetica", sans-serif',
+ * ```
+ * Make sure the font is loaded in the app shell (via `@font-face`,
+ * Google Fonts, or a similar mechanism).
+ *
+ * ### Adjusting a variant
+ * Edit the relevant entry — `fontSize` and `fontWeight` are required;
+ * all other fields are optional:
+ * ```ts
+ * h1: {
+ *   fontWeight: 700,
+ *   fontSize: pixelsToRem(40),
+ *   lineHeight: pixelsToRem(48),
+ * },
+ * ```
+ *
+ * ### Changing the base font size
+ * Update `htmlFontSize` — all `rem` values recalculate automatically
+ * because `pixelsToRem` divides by it:
+ * ```ts
+ * const htmlFontSize = 14; // was 12
+ * ```
+ */
+
 const htmlFontSize = 12;
 
+/** Converts a pixel value to a `rem` string relative to {@link htmlFontSize}. */
 function pixelsToRem(pixels: number) {
   return `${(pixels / htmlFontSize).toFixed(3)}rem`;
 }
@@ -9,6 +45,8 @@ function pixelsToRem(pixels: number) {
 const typography: ThemeSpecTypography = {
   htmlFontSize,
   fontFamily: '"Helvetica", "Arial", sans-serif',
+
+  // ── Headings ───────────────────────────────────────────────────────────────────────
   h1: {
     fontWeight: 500,
     fontSize: pixelsToRem(32),
@@ -45,6 +83,8 @@ const typography: ThemeSpecTypography = {
     letterSpacing: 0,
     lineHeight: pixelsToRem(18),
   },
+
+  // ── Body ───────────────────────────────────────────────────────────────────────────
   body1: {
     fontWeight: "normal",
     fontSize: pixelsToRem(14),
@@ -75,6 +115,8 @@ const typography: ThemeSpecTypography = {
     letterSpacing: 0,
     lineHeight: pixelsToRem(16),
   },
+
+  // ── Utility ─────────────────────────────────────────────────────────────────────
   overline: {
     fontWeight: 500,
     fontSize: pixelsToRem(10),
@@ -89,6 +131,8 @@ const typography: ThemeSpecTypography = {
     textTransform: "uppercase",
     lineHeight: pixelsToRem(20),
   },
+
+  // ── Icons ─────────────────────────────────────────────────────────────────────────
   iconography: {
     xxs: pixelsToRem(12),
     xs: pixelsToRem(13),

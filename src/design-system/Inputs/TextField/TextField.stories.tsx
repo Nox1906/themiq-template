@@ -17,6 +17,7 @@ const meta: Meta<typeof TextField> = {
     label: { control: "text" },
     placeholder: { control: "text" },
     helperText: { control: "text" },
+    color: { control: false },
   },
 };
 

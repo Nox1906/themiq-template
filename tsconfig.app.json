@@ -22,7 +22,13 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Path aliases */
+    "paths": {
+      "@/design-system": ["./src/design-system"],
+      "@/design-system/*": ["./src/design-system/*"]
+    }
   },
   "include": ["src", "src/vite-env.d.ts"],
   "exclude": ["vitest.shims.d.ts", "vitest.config.ts"]
