@@ -1,5 +1,5 @@
 /**
- * MUI theme module augmentation for the Chameleon design system.
+ * MUI theme module augmentation for the Themiq design system.
  *
  * This file extends MUI's built-in `Theme` interface so that `useTheme()`,
  * `styled()`, and `makeStyles()` automatically return the design-system-specific

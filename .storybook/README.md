@@ -1,6 +1,6 @@
 # Storybook
 
-Component explorer and visual test runner for the Chameleon design system. Every design-system component has a `*.stories.tsx` file alongside it; Storybook discovers them automatically.
+Component explorer and visual test runner for the Themiq design system. Every design-system component has a `*.stories.tsx` file alongside it; Storybook discovers them automatically.
 
 ---
 

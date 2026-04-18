@@ -55,7 +55,7 @@
  *     }),
  *
  *     // Lowest-priority explicit strategy: saved localStorage preference
- *     createOptionalLocalStorageResolver({ storageKey: 'chameleon-theme' }),
+ *     createOptionalLocalStorageResolver({ storageKey: 'themiq-theme' }),
  *   ],
  *   { fallback: 'theme1' },  // used only if ALL steps return null
  * );

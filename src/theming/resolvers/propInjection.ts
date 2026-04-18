@@ -3,7 +3,7 @@
  *
  * Allows an **external host** (e.g. a micro-frontend shell, a test harness,
  * or a Storybook decorator) to inject the active theme name into the
- * Chameleon platform without coupling to `PlatformTheme`'s internals.
+ * Themiq platform without coupling to `PlatformTheme`'s internals.
  *
  * ### How it works
  * 1. The resolver exports `ThemeNameContext` — a plain React context whose
@@ -69,7 +69,7 @@
 import { createContext, useContext } from "react";
 
 import type { ThemeSpec } from "../themes/spec";
-import type { ResolverConfig,UseThemeResolver } from "./types";
+import type { ResolverConfig, UseThemeResolver } from "./types";
 
 /**
  * React context that carries an externally-injected theme name.

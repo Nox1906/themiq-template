@@ -36,7 +36,7 @@ const themesByName = R.values(allThemes).reduce(
 const muiCache = createCache({ key: "mui", prepend: true });
 
 /**
- * Root theming provider for the Chameleon platform.
+ * Root theming provider for the Themiq platform.
  *
  * Wraps the application tree with MUI's `ThemeProvider`, selecting the active
  * theme from the URL's first path segment (the *app slug*).

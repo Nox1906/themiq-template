@@ -29,7 +29,7 @@
  * import { createLocalStorageResolver } from './localStorage';
  *
  * export const useThemeResolver = createLocalStorageResolver({
- *   storageKey: 'chameleon-theme',  // optional — this is the default
+ *   storageKey: 'themiq-theme',  // optional — this is the default
  *   fallback:   'theme1',
  * });
  * ```
@@ -38,13 +38,13 @@
 import { useState } from "react";
 
 import type { ThemeSpec } from "../themes/spec";
-import type { ResolverConfig,UseThemeResolver } from "./types";
+import type { ResolverConfig, UseThemeResolver } from "./types";
 
 /** Configuration for the localStorage resolver. */
 export interface LocalStorageResolverConfig extends ResolverConfig {
   /**
    * The `localStorage` key to read the theme name from.
-   * @default 'chameleon-theme'
+   * @default 'themiq-theme'
    */
   storageKey?: string;
 }
@@ -58,7 +58,7 @@ export interface LocalStorageResolverConfig extends ResolverConfig {
 export function createLocalStorageResolver(
   config: LocalStorageResolverConfig,
 ): UseThemeResolver {
-  const { fallback, storageKey = "chameleon-theme" } = config;
+  const { fallback, storageKey = "themiq-theme" } = config;
 
   return function useThemeResolver(): ThemeSpec["name"] {
     /**

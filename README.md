@@ -1,4 +1,4 @@
-# Chameleon
+# Themiq
 
 A multi-theme React platform built with MUI, Vite, and TypeScript. The theme is selected at runtime via a pluggable resolver system — the same codebase serves multiple applications, each with its own visual identity.
 

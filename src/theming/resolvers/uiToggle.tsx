@@ -52,7 +52,7 @@
  * Seed `defaultTheme` from `localStorage` and write back on change:
  * ```tsx
  * const defaultTheme =
- *   (localStorage.getItem('chameleon-theme') as ThemeSpec['name']) ?? 'theme1';
+ *   (localStorage.getItem('themiq-theme') as ThemeSpec['name']) ?? 'theme1';
  *
  * <ThemeControlProvider defaultTheme={defaultTheme}>
  *   <PlatformTheme>...</PlatformTheme>
@@ -62,7 +62,7 @@
  * ```ts
  * const { setThemeName } = useThemeControl();
  * const handleChange = (name: ThemeSpec['name']) => {
- *   localStorage.setItem('chameleon-theme', name);
+ *   localStorage.setItem('themiq-theme', name);
  *   setThemeName(name);
  * };
  * ```
