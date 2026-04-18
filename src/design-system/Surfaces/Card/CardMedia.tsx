@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CardMedia as MuiCardMedia,
   type CardMediaProps as MuiCardMediaProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CardMedia.styles";
 
 const useStyles = makeStyles({ name: "CardMedia" });
-
 
 function CardMediaImpl(
   { className, classes: overrideClasses, ...props }: CardMediaProps,
@@ -60,6 +59,7 @@ export type CardMediaProps = Omit<MuiCardMediaProps, never> & {
  *   alt="Landscape"
  * />
  * ```
+ * @see https://mui.com/material-ui/react-card/
  */
 const CardMedia = forwardRef(CardMediaImpl) as (
   props: CardMediaProps & { ref?: React.Ref<HTMLDivElement> },

@@ -1,8 +1,7 @@
-import { forwardRef, type JSX } from "react";
 import { Box as MuiBox, type BoxProps as MuiBoxProps } from "@mui/material";
+import { forwardRef, type JSX } from "react";
 
 export type BoxProps = MuiBoxProps;
-
 
 function BoxImpl(props: BoxProps, ref: React.Ref<HTMLElement>) {
   return <MuiBox ref={ref as React.Ref<never>} {...props} />;
@@ -20,6 +19,7 @@ function BoxImpl(props: BoxProps, ref: React.Ref<HTMLElement>) {
  *   <Typography>Loading…</Typography>
  * </Box>
  * ```
+ * @see https://mui.com/material-ui/react-box/
  */
 const Box = forwardRef(BoxImpl) as (
   props: BoxProps & { ref?: React.Ref<HTMLElement> },

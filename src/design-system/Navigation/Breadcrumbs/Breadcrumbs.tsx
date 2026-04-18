@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Breadcrumbs as MuiBreadcrumbs,
   type BreadcrumbsProps as MuiBreadcrumbsProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Breadcrumbs.styles";
 
 const useStyles = makeStyles({ name: "Breadcrumbs" });
-
 
 function BreadcrumbsImpl(
   { className, classes: overrideClasses, ...props }: BreadcrumbsProps,
@@ -87,6 +86,7 @@ export type BreadcrumbsProps = Omit<MuiBreadcrumbsProps, never> & {
  *
  * All MUI `BreadcrumbsProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-breadcrumbs/
  */
 const Breadcrumbs = forwardRef(BreadcrumbsImpl) as (
   props: BreadcrumbsProps & { ref?: React.Ref<HTMLElement> },

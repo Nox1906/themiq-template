@@ -1,10 +1,10 @@
+import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 import React from "react";
-import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
 import * as themes from "../src/theming/themes";
-import ThemeWrapper from "./ThemeWrapper";
 import { ThemeSpec } from "../src/theming/themes/spec";
+import ThemeWrapper from "./ThemeWrapper";
 
 const preview: Preview = {
   parameters: {

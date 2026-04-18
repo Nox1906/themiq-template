@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Checkbox as MuiCheckbox,
   type CheckboxProps as MuiCheckboxProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Checkbox.styles";
 
 const useStyles = makeStyles({ name: "Checkbox" });
-
 
 function CheckboxImpl(
   { className, classes: overrideClasses, ...props }: CheckboxProps,
@@ -74,6 +73,7 @@ export type CheckboxProps = Omit<MuiCheckboxProps, never> & {
  *
  * All MUI `CheckboxProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-checkbox/
  */
 const Checkbox = forwardRef(CheckboxImpl) as (
   props: CheckboxProps & { ref?: React.Ref<HTMLButtonElement> },

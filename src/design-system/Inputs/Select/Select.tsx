@@ -1,9 +1,9 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Select as MuiSelect,
   type SelectProps as MuiSelectProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Select.styles";
 
@@ -76,6 +76,7 @@ export type SelectProps<Value = string> = Omit<MuiSelectProps<Value>, never> & {
  *
  * All MUI `SelectProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-select/
  */
 const Select = forwardRef(SelectImpl) as <Value = string>(
   props: SelectProps<Value> & { ref?: React.Ref<HTMLDivElement> },

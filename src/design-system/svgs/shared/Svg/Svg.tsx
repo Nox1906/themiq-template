@@ -1,10 +1,9 @@
+import { SvgIcon, type SvgIconProps } from "@mui/material";
+import camelCase from "lodash.camelcase";
+import upperFirst from "lodash.upperfirst";
 import { forwardRef } from "react";
 
 import { isValidURL } from "../../../../validations";
-import camelCase from "lodash.camelcase";
-import upperFirst from "lodash.upperfirst";
-
-import { SvgIcon, type SvgIconProps } from "@mui/material";
 
 /**
  * @deprecated

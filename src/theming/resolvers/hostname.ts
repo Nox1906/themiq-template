@@ -36,7 +36,7 @@
  */
 
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /**
  * The full hostname of the current page, captured **once at module load time**.

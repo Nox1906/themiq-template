@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   RadioGroup as MuiRadioGroup,
   type RadioGroupProps as MuiRadioGroupProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 export type RadioGroupProps = Omit<MuiRadioGroupProps, never> & {
   // ─── Design-system overrides ────────────────────────────────────────────────
 };
-
 
 function RadioGroupImpl(
   { ...props }: RadioGroupProps,
@@ -34,6 +33,7 @@ function RadioGroupImpl(
  *   </RadioGroup>
  * </FormControl>
  * ```
+ * @see https://mui.com/material-ui/react-radio-button/
  */
 const RadioGroup = forwardRef(RadioGroupImpl) as (
   props: RadioGroupProps & { ref?: React.Ref<HTMLDivElement> },

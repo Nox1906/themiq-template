@@ -1,9 +1,8 @@
+import type { Theme } from "@mui/material/styles";
 import { useMemo } from "react";
-
 import type { CSSObject } from "tss-react";
 import { makeStyles as tssMakeStyles } from "tss-react/mui";
 
-import type { Theme } from "@mui/material/styles";
 import shallowEqual from "./shallowEqual";
 import usePrevious from "./usePrevious";
 

@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Autocomplete as MuiAutocomplete,
   type AutocompleteProps as MuiAutocompleteProps,
   type ChipTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Autocomplete.styles";
 
@@ -128,6 +128,7 @@ export type AutocompleteProps<
  *
  * All MUI `AutocompleteProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-autocomplete/
  */
 const Autocomplete = forwardRef(AutocompleteImpl) as <
   Value = unknown,

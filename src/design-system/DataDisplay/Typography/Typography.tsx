@@ -1,13 +1,13 @@
-import { type ElementType, forwardRef, type JSX } from "react";
 import {
   Typography as MuiTypography,
   type TypographyProps as MuiTypographyProps,
   type TypographyTypeMap,
 } from "@mui/material";
+import { type ElementType, forwardRef, type JSX } from "react";
 
-import makeStyles from "./Typography.styles";
-import Tooltip from "../Tooltip";
 import { useCheckOverflowOnHover, useMergedRef } from "../../../hooks";
+import Tooltip from "../Tooltip";
+import makeStyles from "./Typography.styles";
 
 const useStyles = makeStyles({ name: "Typography" });
 
@@ -177,6 +177,7 @@ function TypographyImpl<
  * All MUI `TypographyProps` (e.g. `align`, `gutterBottom`, `component`) are forwarded.
  * The overflow tooltip is rendered by the design-system `Tooltip` and can be
  * customised via `TooltipProps`.
+ * @see https://mui.com/material-ui/react-typography/
  */
 const Typography = forwardRef(TypographyImpl) as <
   BaseComponent extends ElementType = TypographyTypeMap["defaultComponent"],

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   FormControl as MuiFormControl,
   type FormControlProps as MuiFormControlProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./FormControl.styles";
 
 const useStyles = makeStyles({ name: "FormControl" });
-
 
 function FormControlImpl(
   { className, classes: overrideClasses, ...props }: FormControlProps,
@@ -59,6 +58,7 @@ export type FormControlProps = Omit<MuiFormControlProps, never> & {
  *   <FormHelperText>Required field</FormHelperText>
  * </FormControl>
  * ```
+ * @see https://mui.com/material-ui/react-text-field/#form-props
  */
 const FormControl = forwardRef(FormControlImpl) as (
   props: FormControlProps & { ref?: React.Ref<HTMLDivElement> },

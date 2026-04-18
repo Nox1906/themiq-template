@@ -1,15 +1,14 @@
-import { forwardRef, type JSX, type ReactNode } from "react";
 import {
   IconButton,
   Tooltip as MuiTooltip,
   type TooltipProps as MuiTooltipProps,
 } from "@mui/material";
+import { forwardRef, type JSX, type ReactNode } from "react";
 
 import Icon from "../Icon";
 import makeStyles from "./Tooltip.styles";
 
 const useStyles = makeStyles({ name: "Tooltip" });
-
 
 function TooltipImpl(
   {
@@ -104,6 +103,7 @@ export type TooltipProps = Omit<MuiTooltipProps, "title" | "color"> & {
  * All MUI `TooltipProps` (e.g. `placement`, `disableInteractive`, `PopperProps`)
  * are forwarded. `title` is replaced by `text` to avoid collision with the HTML
  * `title` attribute. `color` is intercepted and forwarded as a theme class.
+ * @see https://mui.com/material-ui/react-tooltip/
  */
 const Tooltip = forwardRef(TooltipImpl) as (
   props: TooltipProps & { ref?: React.Ref<unknown> },

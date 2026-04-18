@@ -44,9 +44,9 @@
 
 import type { ThemeSpec } from "../themes/spec";
 import type {
-  UseThemeResolver,
-  UseOptionalThemeResolver,
   ResolverConfig,
+  UseOptionalThemeResolver,
+  UseThemeResolver,
 } from "./types";
 
 /** Configuration for the tenant resolver. */

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CardActions as MuiCardActions,
   type CardActionsProps as MuiCardActionsProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CardActions.styles";
 
 const useStyles = makeStyles({ name: "CardActions" });
-
 
 function CardActionsImpl(
   { className, classes: overrideClasses, ...props }: CardActionsProps,
@@ -59,6 +58,7 @@ export type CardActionsProps = Omit<MuiCardActionsProps, never> & {
  *   </CardActions>
  * </Card>
  * ```
+ * @see https://mui.com/material-ui/react-card/
  */
 const CardActions = forwardRef(CardActionsImpl) as (
   props: CardActionsProps & { ref?: React.Ref<HTMLDivElement> },

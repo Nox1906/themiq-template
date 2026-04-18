@@ -1,8 +1,8 @@
-import React from "react";
 import type { Meta } from "@storybook/react";
-import Alert from "../Alert";
-import Button from "../../Inputs/Button";
+import React from "react";
 
+import Button from "../../Inputs/Button";
+import Alert from "../Alert";
 import Snackbar from "./Snackbar";
 
 // Snackbar is a controlled component — all stories use render functions with

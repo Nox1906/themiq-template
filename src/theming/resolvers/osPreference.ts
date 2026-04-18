@@ -29,6 +29,7 @@
  */
 
 import { useMediaQuery } from "@mui/material";
+
 import type { ThemeSpec } from "../themes/spec";
 import type { UseThemeResolver } from "./types";
 

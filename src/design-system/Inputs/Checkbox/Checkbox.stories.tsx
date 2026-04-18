@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormControlLabel } from "../Form";
 
+import { FormControlLabel } from "../Form";
 import Checkbox from "./Checkbox";
 
 const meta: Meta<typeof Checkbox> = {

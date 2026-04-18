@@ -1,16 +1,17 @@
-import * as allThemes from "./themes";
-import type { ThemeSpec } from "./themes/spec";
-import { useThemeResolver } from "./resolvers";
-import { useMemo } from "react";
-import { getTheme } from "./utils.ts";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
 import {
   CssBaseline,
   StyledEngineProvider,
   ThemeProvider,
 } from "@mui/material";
-import createCache from "@emotion/cache";
-import { CacheProvider } from "@emotion/react";
 import * as R from "ramda";
+import { useMemo } from "react";
+
+import { useThemeResolver } from "./resolvers";
+import * as allThemes from "./themes";
+import type { ThemeSpec } from "./themes/spec";
+import { getTheme } from "./utils.ts";
 
 /**
  * Flat lookup map of all registered themes, keyed by `theme.name`.

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Switch as MuiSwitch,
   type SwitchProps as MuiSwitchProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Switch.styles";
 
 const useStyles = makeStyles({ name: "Switch" });
-
 
 function SwitchImpl(
   { className, classes: overrideClasses, ...props }: SwitchProps,
@@ -73,6 +72,7 @@ export type SwitchProps = Omit<MuiSwitchProps, never> & {
  *
  * All MUI `SwitchProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-switch/
  */
 const Switch = forwardRef(SwitchImpl) as (
   props: SwitchProps & { ref?: React.Ref<HTMLButtonElement> },

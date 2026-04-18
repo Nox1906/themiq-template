@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormControl, FormHelperText, InputLabel } from "../Form";
-import { MenuItem } from "../../Navigation/Menu";
 
+import { MenuItem } from "../../Navigation/Menu";
+import { FormControl, FormHelperText, InputLabel } from "../Form";
 import Select from "./Select";
 
 const OPTIONS = [

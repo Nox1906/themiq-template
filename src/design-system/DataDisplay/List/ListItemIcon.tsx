@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   ListItemIcon as MuiListItemIcon,
   type ListItemIconProps as MuiListItemIconProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./ListItemIcon.styles";
 
 const useStyles = makeStyles({ name: "ListItemIcon" });
-
 
 function ListItemIconImpl(
   { className, classes: overrideClasses, ...props }: ListItemIconProps,
@@ -58,6 +57,7 @@ export type ListItemIconProps = Omit<MuiListItemIconProps, never> & {
  *   <ListItemText primary="Inbox" />
  * </ListItem>
  * ```
+ * @see https://mui.com/material-ui/react-list/
  */
 const ListItemIcon = forwardRef(ListItemIconImpl) as (
   props: ListItemIconProps & { ref?: React.Ref<HTMLDivElement> },

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Avatar as MuiAvatar,
   type AvatarProps as MuiAvatarProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Avatar.styles";
 
 const useStyles = makeStyles({ name: "Avatar" });
-
 
 function AvatarImpl(
   { className, classes: overrideClasses, ...props }: AvatarProps,
@@ -80,6 +79,7 @@ export type AvatarProps = Omit<MuiAvatarProps, never> & {
  *
  * All MUI `AvatarProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-avatar/
  */
 const Avatar = forwardRef(AvatarImpl) as (
   props: AvatarProps & { ref?: React.Ref<HTMLDivElement> },

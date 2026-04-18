@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Skeleton as MuiSkeleton,
   type SkeletonProps as MuiSkeletonProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Skeleton.styles";
 
 const useStyles = makeStyles({ name: "Skeleton" });
-
 
 function SkeletonImpl(
   { className, classes: overrideClasses, ...props }: SkeletonProps,
@@ -80,6 +79,7 @@ export type SkeletonProps = Omit<MuiSkeletonProps, never> & {
  *
  * All MUI `SkeletonProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-skeleton/
  */
 const Skeleton = forwardRef(SkeletonImpl) as (
   props: SkeletonProps & { ref?: React.Ref<HTMLSpanElement> },

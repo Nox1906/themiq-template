@@ -36,8 +36,9 @@
  */
 
 import { useSearchParams } from "react-router-dom";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /** Configuration for the query parameter resolver. */
 export interface QueryParamResolverConfig extends ResolverConfig {

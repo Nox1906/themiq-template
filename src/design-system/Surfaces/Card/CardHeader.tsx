@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CardHeader as MuiCardHeader,
   type CardHeaderProps as MuiCardHeaderProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CardHeader.styles";
 
 const useStyles = makeStyles({ name: "CardHeader" });
-
 
 function CardHeaderImpl(
   { className, classes: overrideClasses, ...props }: CardHeaderProps,
@@ -60,6 +59,7 @@ export type CardHeaderProps = Omit<MuiCardHeaderProps, never> & {
  *   <CardContent>...</CardContent>
  * </Card>
  * ```
+ * @see https://mui.com/material-ui/react-card/
  */
 const CardHeader = forwardRef(CardHeaderImpl) as (
   props: CardHeaderProps & { ref?: React.Ref<HTMLDivElement> },

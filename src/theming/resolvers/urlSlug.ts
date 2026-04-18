@@ -37,8 +37,9 @@
  */
 
 import { matchPath } from "react-router-dom";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /** Shape of the URL parameters captured from `/:appSlug`. */
 type AppParams = { appSlug: string };

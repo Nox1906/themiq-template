@@ -1,10 +1,10 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   DataGrid as MuiDataGrid,
   type DataGridProps as MuiDataGridProps,
   type GridValidRowModel,
 } from "@mui/x-data-grid";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./DataGrid.styles";
 
@@ -99,6 +99,7 @@ export type DataGridProps<R extends GridValidRowModel = GridValidRowModel> =
  *
  * All MUI X `DataGridProps` are forwarded unchanged.
  * Visual overrides via `sx` or the theme's `MuiDataGrid` component key.
+ * @see https://mui.com/x/react-data-grid/
  */
 const DataGrid = forwardRef(DataGridImpl) as <
   R extends GridValidRowModel = GridValidRowModel,

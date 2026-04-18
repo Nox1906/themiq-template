@@ -1,11 +1,10 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import { Menu as MuiMenu, type MenuProps as MuiMenuProps } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Menu.styles";
 
 const useStyles = makeStyles({ name: "Menu" });
-
 
 function MenuImpl(
   { className, classes: overrideClasses, ...props }: MenuProps,
@@ -77,6 +76,7 @@ export type MenuProps = Omit<MuiMenuProps, never> & {
  *
  * All MUI `MenuProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-menu/
  */
 const Menu = forwardRef(MenuImpl) as (
   props: MenuProps & { ref?: React.Ref<HTMLDivElement> },

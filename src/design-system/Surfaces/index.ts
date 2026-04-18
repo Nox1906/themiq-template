@@ -1,7 +1,7 @@
 export {
   default as Accordion,
-  AccordionSummary,
   AccordionDetails,
+  AccordionSummary,
 } from "./Accordion";
 export {
   default as Card,

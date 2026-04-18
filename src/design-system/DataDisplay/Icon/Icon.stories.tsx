@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import * as MuiIcons from "@mui/icons-material";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Icon, { type IconProps } from "./Icon";
-import { type IconName, customIconNames } from "./iconUtils";
+import { customIconNames,type IconName } from "./iconUtils";
 
 const baseIconNames = (Object.keys(MuiIcons) as IconName[]).filter(
   (name) => !/(Outlined|Rounded|Sharp|TwoTone)$/.test(name),

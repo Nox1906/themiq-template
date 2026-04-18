@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Chip as MuiChip,
   type ChipProps as MuiChipProps,
   type ChipTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Chip.styles";
 
@@ -110,6 +110,7 @@ export type ChipProps<
  * All MUI `ChipProps` (e.g. `color`, `size`, `variant`, `avatar`, `disabled`,
  * `onDelete`, `deleteIcon`) are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-chip/
  */
 const Chip = forwardRef(ChipImpl) as <
   BaseComponent extends ElementType = ChipTypeMap["defaultComponent"],

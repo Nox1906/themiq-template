@@ -1,8 +1,7 @@
 /**
  * Merges multiple refs into a single callback ref
  */
-import type { Ref } from "react";
-import { useCallback, useRef } from "react";
+import { type Ref, useCallback, useRef } from "react";
 
 type PossibleRef<T> = Ref<T> | null | undefined | false;
 
@@ -22,12 +21,13 @@ export function useMergedRef<T>(...refs: Array<PossibleRef<T>>) {
   const refsRef = useRef(refs);
 
   // Update the stored refs on each render
+  // eslint-disable-next-line react-hooks/refs -- intentional: storing latest refs synchronously during render is a well-known stable-callback pattern
   refsRef.current = refs;
 
   return useCallback(
     (element: T | null) => {
       refsRef.current.forEach((ref) => assignRef(ref, element));
     },
-    [] // Empty dependency array - callback never changes
+    [], // Empty dependency array - callback never changes
   );
 }

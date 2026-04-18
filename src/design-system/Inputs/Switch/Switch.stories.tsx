@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormControlLabel } from "../Form";
 
+import { FormControlLabel } from "../Form";
 import Switch from "./Switch";
 
 const meta: Meta<typeof Switch> = {

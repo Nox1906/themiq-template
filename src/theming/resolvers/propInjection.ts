@@ -67,8 +67,9 @@
  */
 
 import { createContext, useContext } from "react";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /**
  * React context that carries an externally-injected theme name.

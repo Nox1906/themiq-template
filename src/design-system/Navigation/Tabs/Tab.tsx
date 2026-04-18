@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Tab as MuiTab,
   type TabProps as MuiTabProps,
   type TabTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Tab.styles";
 
@@ -113,6 +113,7 @@ export type TabProps<
  *
  * All MUI `TabProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-tabs/
  */
 const Tab = forwardRef(TabImpl) as <
   BaseComponent extends ElementType = TabTypeMap["defaultComponent"],

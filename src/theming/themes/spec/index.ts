@@ -1,8 +1,8 @@
-import type { ThemeSpecPalette } from "./palette";
-import type { ThemeSpecTypography } from "./typography";
-import type { ThemeSpecShape } from "./shape";
 import type { ThemeSpecBreakpoints } from "./breakpoints";
+import type { ThemeSpecPalette } from "./palette";
+import type { ThemeSpecShape } from "./shape";
 import type { ThemeSpecTransitions } from "./transitions";
+import type { ThemeSpecTypography } from "./typography";
 import type { ThemeSpecZIndex } from "./zIndex";
 
 /**

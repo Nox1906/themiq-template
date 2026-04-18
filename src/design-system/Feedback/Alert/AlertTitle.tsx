@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   AlertTitle as MuiAlertTitle,
   type AlertTitleProps as MuiAlertTitleProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./AlertTitle.styles";
 
 const useStyles = makeStyles({ name: "AlertTitle" });
-
 
 function AlertTitleImpl(
   { className, classes: overrideClasses, ...props }: AlertTitleProps,
@@ -55,6 +54,7 @@ export type AlertTitleProps = Omit<MuiAlertTitleProps, never> & {
  *   Additional context goes here.
  * </Alert>
  * ```
+ * @see https://mui.com/material-ui/react-alert/
  */
 const AlertTitle = forwardRef(AlertTitleImpl) as (
   props: AlertTitleProps & { ref?: React.Ref<HTMLDivElement> },

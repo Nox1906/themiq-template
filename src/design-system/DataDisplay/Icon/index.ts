@@ -1,2 +1,2 @@
 export { default } from "./Icon";
-export { isValidIconName, type IconName } from "./iconUtils";
+export { type IconName,isValidIconName } from "./iconUtils";

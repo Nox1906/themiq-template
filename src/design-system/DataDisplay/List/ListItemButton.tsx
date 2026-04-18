@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   ListItemButton as MuiListItemButton,
   type ListItemButtonProps as MuiListItemButtonProps,
   type ListItemButtonTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./ListItemButton.styles";
 
@@ -77,6 +77,7 @@ export type ListItemButtonProps<
  *   </ListItemButton>
  * </ListItem>
  * ```
+ * @see https://mui.com/material-ui/react-list/
  */
 const ListItemButton = forwardRef(ListItemButtonImpl) as <
   BaseComponent extends ElementType = ListItemButtonTypeMap["defaultComponent"],

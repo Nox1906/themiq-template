@@ -1,9 +1,9 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   ListItem as MuiListItem,
   type ListItemProps as MuiListItemProps,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./ListItem.styles";
 
@@ -124,6 +124,7 @@ export type ListItemProps<
  *
  * All MUI `ListItemProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-list/
  */
 const ListItem = forwardRef(ListItemImpl) as <
   BaseComponent extends ElementType = "li",

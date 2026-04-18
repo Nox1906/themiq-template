@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   ListSubheader as MuiListSubheader,
   type ListSubheaderProps as MuiListSubheaderProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./ListSubheader.styles";
 
 const useStyles = makeStyles({ name: "ListSubheader" });
-
 
 function ListSubheaderImpl(
   { className, classes: overrideClasses, ...props }: ListSubheaderProps,
@@ -55,6 +54,7 @@ export type ListSubheaderProps = Omit<MuiListSubheaderProps, never> & {
  *   <ListItem>...</ListItem>
  * </List>
  * ```
+ * @see https://mui.com/material-ui/react-list/
  */
 const ListSubheader = forwardRef(ListSubheaderImpl) as (
   props: ListSubheaderProps & { ref?: React.Ref<HTMLLIElement> },

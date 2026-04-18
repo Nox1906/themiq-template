@@ -55,6 +55,7 @@ npm run dev
 | `npm run preview`         | Preview the production build locally           |
 | `npm run typecheck`       | Run TypeScript type-check (app + node configs) |
 | `npm run lint`            | Run ESLint across all source files             |
+| `npm run lint:fix`        | Auto-fix ESLint issues (incl. import order)    |
 | `npm test`                | Run Vitest unit tests                          |
 | `npm run storybook`       | Start Storybook on port 6006                   |
 | `npm run storybook:dev`   | Run Storybook + Vitest concurrently            |

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   FormHelperText as MuiFormHelperText,
   type FormHelperTextProps as MuiFormHelperTextProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./FormHelperText.styles";
 
 const useStyles = makeStyles({ name: "FormHelperText" });
-
 
 function FormHelperTextImpl(
   { className, classes: overrideClasses, ...props }: FormHelperTextProps,
@@ -57,6 +56,7 @@ export type FormHelperTextProps = Omit<MuiFormHelperTextProps, never> & {
  *   <FormHelperText>This field is required</FormHelperText>
  * </FormControl>
  * ```
+ * @see https://mui.com/material-ui/react-text-field/#form-props
  */
 const FormHelperText = forwardRef(FormHelperTextImpl) as (
   props: FormHelperTextProps & { ref?: React.Ref<HTMLParagraphElement> },

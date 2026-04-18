@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   IconButton as MuiIconButton,
   type IconButtonProps as MuiIconButtonProps,
   type IconButtonTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import Icon, { type IconProps } from "../../DataDisplay/Icon/Icon";
 import makeStyles from "./IconButton.styles";
@@ -146,6 +146,7 @@ export type IconButtonProps<
  * All MUI `IconButtonProps` (e.g. `color`, `size`, `disabled`, `onClick`,
  * `edge`) are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-button/#icon-button
  */
 const IconButton = forwardRef(IconButtonImpl) as <
   BaseComponent extends ElementType = IconButtonTypeMap["defaultComponent"],

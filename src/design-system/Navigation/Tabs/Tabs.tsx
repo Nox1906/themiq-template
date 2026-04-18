@@ -1,11 +1,10 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import { Tabs as MuiTabs, type TabsProps as MuiTabsProps } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Tabs.styles";
 
 const useStyles = makeStyles({ name: "Tabs" });
-
 
 function TabsImpl(
   { className, classes: overrideClasses, ...props }: TabsProps,
@@ -85,6 +84,7 @@ export type TabsProps = Omit<MuiTabsProps, never> & {
  *
  * All MUI `TabsProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-tabs/
  */
 const Tabs = forwardRef(TabsImpl) as (
   props: TabsProps & { ref?: React.Ref<HTMLDivElement> },

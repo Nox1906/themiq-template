@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Paper as MuiPaper,
   type PaperProps as MuiPaperProps,
   type PaperTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Paper.styles";
 
@@ -109,6 +109,7 @@ export type PaperProps<
  *
  * All MUI `PaperProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-paper/
  */
 const Paper = forwardRef(PaperImpl) as <
   BaseComponent extends ElementType = PaperTypeMap["defaultComponent"],

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Drawer as MuiDrawer,
   type DrawerProps as MuiDrawerProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Drawer.styles";
 
 const useStyles = makeStyles({ name: "Drawer" });
-
 
 function DrawerImpl(
   { className, classes: overrideClasses, ...props }: DrawerProps,
@@ -86,6 +85,7 @@ export type DrawerProps = Omit<MuiDrawerProps, never> & {
  *
  * All MUI `DrawerProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-drawer/
  */
 const Drawer = forwardRef(DrawerImpl) as (
   props: DrawerProps & { ref?: React.Ref<HTMLDivElement> },

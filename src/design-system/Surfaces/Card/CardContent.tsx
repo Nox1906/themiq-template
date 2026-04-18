@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CardContent as MuiCardContent,
   type CardContentProps as MuiCardContentProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CardContent.styles";
 
 const useStyles = makeStyles({ name: "CardContent" });
-
 
 function CardContentImpl(
   { className, classes: overrideClasses, ...props }: CardContentProps,
@@ -57,6 +56,7 @@ export type CardContentProps = Omit<MuiCardContentProps, never> & {
  *   </CardContent>
  * </Card>
  * ```
+ * @see https://mui.com/material-ui/react-card/
  */
 const CardContent = forwardRef(CardContentImpl) as (
   props: CardContentProps & { ref?: React.Ref<HTMLDivElement> },

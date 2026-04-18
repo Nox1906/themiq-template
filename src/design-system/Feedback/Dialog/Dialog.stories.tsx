@@ -1,14 +1,14 @@
-import React from "react";
 import type { Meta } from "@storybook/react";
+import React from "react";
+
+import Button from "../../Inputs/Button";
+import TextField from "../../Inputs/TextField";
 import {
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
 } from "./";
-import Button from "../../Inputs/Button";
-import TextField from "../../Inputs/TextField";
-
 import Dialog from "./Dialog";
 
 // Dialog is a controlled component — all stories use render functions with

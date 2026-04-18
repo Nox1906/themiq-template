@@ -42,10 +42,11 @@
  * 3. `IntegrationEngineThemeName` below updates automatically because it is
  *    derived from the `themes/index.ts` module exports.
  */
+import type { ThemeOptions as MuiThemeOptions } from "@mui/material/styles";
+
 import type * as themes from ".";
 import type { ThemeSpec } from "./spec";
 import type { ThemeSpecTypography } from "./spec/typography";
-import type { ThemeOptions as MuiThemeOptions } from "@mui/material/styles";
 
 /** Union of all registered theme objects (derived from `themes/index.ts` exports). */
 export type IntegrationEngineTheme = (typeof themes)[keyof typeof themes];

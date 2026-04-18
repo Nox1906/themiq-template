@@ -28,5 +28,6 @@ export default function usePrevious<T>(val: T) {
     valRef.current = val;
   }, [val]);
 
+  // eslint-disable-next-line react-hooks/refs -- intentional: usePrevious reads the ref in render by design
   return valRef.current;
 }

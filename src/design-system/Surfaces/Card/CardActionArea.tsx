@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CardActionArea as MuiCardActionArea,
   type CardActionAreaProps as MuiCardActionAreaProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CardActionArea.styles";
 
 const useStyles = makeStyles({ name: "CardActionArea" });
-
 
 function CardActionAreaImpl(
   { className, classes: overrideClasses, ...props }: CardActionAreaProps,
@@ -57,6 +56,7 @@ export type CardActionAreaProps = Omit<MuiCardActionAreaProps, never> & {
  *   </CardActionArea>
  * </Card>
  * ```
+ * @see https://mui.com/material-ui/react-card/
  */
 const CardActionArea = forwardRef(CardActionAreaImpl) as (
   props: CardActionAreaProps & { ref?: React.Ref<HTMLButtonElement> },

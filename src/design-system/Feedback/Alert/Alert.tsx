@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Alert as MuiAlert,
   type AlertProps as MuiAlertProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Alert.styles";
 
 const useStyles = makeStyles({ name: "Alert" });
-
 
 function AlertImpl(
   { className, classes: overrideClasses, ...props }: AlertProps,
@@ -79,6 +78,7 @@ export type AlertProps = Omit<MuiAlertProps, never> & {
  *
  * All MUI `AlertProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-alert/
  */
 const Alert = forwardRef(AlertImpl) as (
   props: AlertProps & { ref?: React.Ref<HTMLDivElement> },

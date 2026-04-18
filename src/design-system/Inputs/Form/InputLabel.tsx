@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   InputLabel as MuiInputLabel,
   type InputLabelProps as MuiInputLabelProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./InputLabel.styles";
 
 const useStyles = makeStyles({ name: "InputLabel" });
-
 
 function InputLabelImpl(
   { className, classes: overrideClasses, ...props }: InputLabelProps,
@@ -58,6 +57,7 @@ export type InputLabelProps = Omit<MuiInputLabelProps, never> & {
  *   </Select>
  * </FormControl>
  * ```
+ * @see https://mui.com/material-ui/react-text-field/#form-props
  */
 const InputLabel = forwardRef(InputLabelImpl) as (
   props: InputLabelProps & { ref?: React.Ref<HTMLLabelElement> },

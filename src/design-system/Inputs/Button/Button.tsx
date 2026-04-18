@@ -1,10 +1,9 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-
 import {
   Button as MuiButton,
   type ButtonProps as MuiButtonProps,
   type ButtonTypeMap,
 } from "@mui/material";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Button.styles";
 
@@ -75,6 +74,7 @@ export type ButtonProps<
  * All MUI `ButtonProps` (e.g. `variant`, `size`, `color`, `disabled`,
  * `onClick`, `startIcon`) are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-button/
  */
 function ButtonImpl<
   BaseComponent extends ElementType = ButtonTypeMap["defaultComponent"],

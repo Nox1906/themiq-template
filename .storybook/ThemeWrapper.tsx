@@ -1,14 +1,15 @@
-import React from "react";
+import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import {
   CssBaseline,
   StyledEngineProvider,
   ThemeProvider,
 } from "@mui/material";
-import createCache from "@emotion/cache";
+import React from "react";
+
 import * as themes from "../src/theming/themes";
-import { getTheme } from "../src/theming/utils.ts";
 import { ThemeSpec } from "../src/theming/themes/spec";
+import { getTheme } from "../src/theming/utils.ts";
 
 const themesByName = Object.values(themes).reduce(
   (acc, theme) => {

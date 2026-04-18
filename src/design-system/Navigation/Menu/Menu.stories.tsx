@@ -1,8 +1,8 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "../../Inputs/Button";
-import Divider from "../../DataDisplay/Divider";
+import React from "react";
 
+import Divider from "../../DataDisplay/Divider";
+import Button from "../../Inputs/Button";
 import Menu from "./Menu";
 import MenuItem from "./MenuItem";
 

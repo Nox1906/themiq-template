@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   AccordionSummary as MuiAccordionSummary,
   type AccordionSummaryProps as MuiAccordionSummaryProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./AccordionSummary.styles";
 
 const useStyles = makeStyles({ name: "AccordionSummary" });
-
 
 function AccordionSummaryImpl(
   { className, classes: overrideClasses, ...props }: AccordionSummaryProps,
@@ -60,6 +59,7 @@ export type AccordionSummaryProps = Omit<MuiAccordionSummaryProps, never> & {
  *   <AccordionDetails>Panel content</AccordionDetails>
  * </Accordion>
  * ```
+ * @see https://mui.com/material-ui/react-accordion/
  */
 const AccordionSummary = forwardRef(AccordionSummaryImpl) as (
   props: AccordionSummaryProps & { ref?: React.Ref<HTMLDivElement> },

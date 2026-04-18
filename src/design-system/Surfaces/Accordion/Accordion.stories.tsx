@@ -1,9 +1,9 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { AccordionDetails, AccordionSummary } from "./";
-import Typography from "../../DataDisplay/Typography";
-import Icon from "../../DataDisplay/Icon";
+import React from "react";
 
+import Icon from "../../DataDisplay/Icon";
+import Typography from "../../DataDisplay/Typography";
+import { AccordionDetails, AccordionSummary } from "./";
 import Accordion from "./Accordion";
 
 const meta: Meta<typeof Accordion> = {

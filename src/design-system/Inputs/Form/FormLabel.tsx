@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   FormLabel as MuiFormLabel,
   type FormLabelProps as MuiFormLabelProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./FormLabel.styles";
 
 const useStyles = makeStyles({ name: "FormLabel" });
-
 
 function FormLabelImpl(
   { className, classes: overrideClasses, ...props }: FormLabelProps,
@@ -59,6 +58,7 @@ export type FormLabelProps = Omit<MuiFormLabelProps, never> & {
  *   </RadioGroup>
  * </FormControl>
  * ```
+ * @see https://mui.com/material-ui/react-text-field/#form-props
  */
 const FormLabel = forwardRef(FormLabelImpl) as (
   props: FormLabelProps & { ref?: React.Ref<HTMLLabelElement> },

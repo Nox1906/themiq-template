@@ -1,14 +1,10 @@
-import { forwardRef, type JSX } from "react";
+import { Link as MuiLink, type LinkProps as MuiLinkProps } from "@mui/material";
 import React from "react";
-import {
-  Link as MuiLink,
-  type LinkProps as MuiLinkProps,
-} from "@mui/material";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Link.styles";
 
 const useStyles = makeStyles({ name: "Link" });
-
 
 function LinkImpl(
   { className, classes: overrideClasses, ...props }: LinkProps,
@@ -65,6 +61,7 @@ export type LinkProps = Omit<MuiLinkProps, never> & {
  * ```tsx
  * <Link component={NavLink} to="/dashboard">Dashboard</Link>
  * ```
+ * @see https://mui.com/material-ui/react-link/
  */
 const Link = forwardRef(LinkImpl) as (
   props: LinkProps & { ref?: React.Ref<HTMLAnchorElement> },

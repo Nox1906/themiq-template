@@ -1,4 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
+import Typography from "../../DataDisplay/Typography";
+import Button from "../../Inputs/Button";
 import {
   CardActionArea,
   CardActions,
@@ -6,9 +9,6 @@ import {
   CardHeader,
   CardMedia,
 } from "./";
-import Button from "../../Inputs/Button";
-import Typography from "../../DataDisplay/Typography";
-
 import Card from "./Card";
 
 const meta: Meta<typeof Card> = {

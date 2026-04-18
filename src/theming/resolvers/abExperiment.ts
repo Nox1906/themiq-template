@@ -45,9 +45,10 @@
  * ```
  */
 
-import { useState, useEffect } from "react";
+import { useEffect,useState } from "react";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /** Configuration for the A/B experiment resolver. */
 export interface AbExperimentResolverConfig extends ResolverConfig {
@@ -121,7 +122,7 @@ export function createAbExperimentResolver(
       return () => controller.abort();
       // `getVariant` and `fallback` come from the factory closure and are
       // stable for the resolver's lifetime — safe to omit from deps.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+       
     }, []);
 
     return themeName;

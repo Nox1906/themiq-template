@@ -36,8 +36,9 @@
  */
 
 import { useState } from "react";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /** Configuration for the localStorage resolver. */
 export interface LocalStorageResolverConfig extends ResolverConfig {

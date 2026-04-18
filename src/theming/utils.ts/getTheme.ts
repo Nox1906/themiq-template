@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+
 import type { ThemeSpec } from "../themes/spec";
 import createShadows from "./createShadows";
 

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   DialogContent as MuiDialogContent,
   type DialogContentProps as MuiDialogContentProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./DialogContent.styles";
 
 const useStyles = makeStyles({ name: "DialogContent" });
-
 
 function DialogContentImpl(
   { className, classes: overrideClasses, ...props }: DialogContentProps,
@@ -59,6 +58,7 @@ export type DialogContentProps = Omit<MuiDialogContentProps, never> & {
  *   <DialogActions>...</DialogActions>
  * </Dialog>
  * ```
+ * @see https://mui.com/material-ui/react-dialog/
  */
 const DialogContent = forwardRef(DialogContentImpl) as (
   props: DialogContentProps & { ref?: React.Ref<HTMLDivElement> },

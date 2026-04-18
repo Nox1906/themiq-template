@@ -1,15 +1,14 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
-  TextField as MuiTextField,
   type OutlinedTextFieldProps,
+  TextField as MuiTextField,
   type TextFieldProps as MuiTextFieldProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./TextField.styles";
 
 const useStyles = makeStyles({ name: "TextField" });
-
 
 function TextFieldImpl(
   { className, classes: overrideClasses, ...props }: TextFieldProps,
@@ -79,6 +78,7 @@ export type TextFieldProps = Omit<OutlinedTextFieldProps, "variant"> & {
  *
  * All MUI `TextFieldProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-text-field/
  */
 const TextField = forwardRef(TextFieldImpl) as (
   props: TextFieldProps & { ref?: React.Ref<HTMLDivElement> },

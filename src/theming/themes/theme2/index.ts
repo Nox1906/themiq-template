@@ -1,10 +1,10 @@
 import type { ThemeSpec } from "../spec";
-import typography from "./typography";
+import breakpoints from "./breakpoints";
 import palette from "./palette";
 import shadows from "./shadows";
 import shape from "./shape";
-import breakpoints from "./breakpoints";
 import transitions from "./transitions";
+import typography from "./typography";
 import zIndex from "./zIndex";
 
 /**

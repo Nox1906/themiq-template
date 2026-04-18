@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Snackbar as MuiSnackbar,
   type SnackbarProps as MuiSnackbarProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Snackbar.styles";
 
 const useStyles = makeStyles({ name: "Snackbar" });
-
 
 function SnackbarImpl(
   { className, classes: overrideClasses, ...props }: SnackbarProps,
@@ -81,6 +80,7 @@ export type SnackbarProps = Omit<MuiSnackbarProps, never> & {
  *
  * All MUI `SnackbarProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-snackbar/
  */
 const Snackbar = forwardRef(SnackbarImpl) as (
   props: SnackbarProps & { ref?: React.Ref<HTMLDivElement> },

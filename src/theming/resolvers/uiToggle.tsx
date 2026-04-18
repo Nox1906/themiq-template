@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components -- this file intentionally exports both React components and factory/hook functions */
 /**
  * UI Toggle Resolver
  *
@@ -77,6 +78,7 @@
  */
 
 import { createContext, useContext, useState } from "react";
+
 import type { ThemeSpec } from "../themes/spec";
 import type { UseThemeResolver } from "./types";
 

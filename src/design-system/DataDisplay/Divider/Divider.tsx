@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Divider as MuiDivider,
   type DividerProps as MuiDividerProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Divider.styles";
 
 const useStyles = makeStyles({ name: "Divider" });
-
 
 function DividerImpl(
   { className, classes: overrideClasses, ...props }: DividerProps,
@@ -78,6 +77,7 @@ export type DividerProps = Omit<MuiDividerProps, never> & {
  *
  * All MUI `DividerProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-divider/
  */
 const Divider = forwardRef(DividerImpl) as (
   props: DividerProps & { ref?: React.Ref<HTMLHRElement> },

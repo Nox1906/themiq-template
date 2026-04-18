@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import type { GridColDef } from "@mui/x-data-grid";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import DataGrid from "./DataGrid";
 

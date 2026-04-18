@@ -1,9 +1,9 @@
-import { forwardRef } from "react";
-import * as React from "react";
 import { type SvgIconProps } from "@mui/material";
+import * as React from "react";
+import { forwardRef } from "react";
 
 import { makeStyles } from "../../utils";
-import { type IconName, getSvgComponentName, iconRegistry } from "./iconUtils";
+import { getSvgComponentName, type IconName, iconRegistry } from "./iconUtils";
 
 /**
  * Props for the design-system Icon.
@@ -84,6 +84,7 @@ const useStyles = makeStyles({ name: "Icon" })({
  *
  * Custom icons in `svg/` override MUI icons of the same name.
  * All MUI `SvgIconProps` (e.g. `color`, `fontSize`, `sx`) are forwarded to the underlying element.
+ * @see https://mui.com/material-ui/icons/
  */
 const Icon = forwardRef(function Icon(
   { size = "sm", name, component, className, ...props }: IconProps,

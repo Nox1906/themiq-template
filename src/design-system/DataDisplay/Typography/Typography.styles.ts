@@ -1,4 +1,5 @@
 import type { CSSObject } from "tss-react";
+
 import { createStyles } from "../../utils";
 
 const maxLinesCapped = (maxLines?: number): CSSObject => ({

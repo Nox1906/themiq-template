@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Link from "../Link";
-import Typography from "../../DataDisplay/Typography";
 
+import Typography from "../../DataDisplay/Typography";
+import Link from "../Link";
 import Breadcrumbs from "./Breadcrumbs";
 
 const meta: Meta<typeof Breadcrumbs> = {

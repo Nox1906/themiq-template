@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   ListItemText as MuiListItemText,
   type ListItemTextProps as MuiListItemTextProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./ListItemText.styles";
 
 const useStyles = makeStyles({ name: "ListItemText" });
-
 
 function ListItemTextImpl(
   { className, classes: overrideClasses, ...props }: ListItemTextProps,
@@ -54,6 +53,7 @@ export type ListItemTextProps = Omit<MuiListItemTextProps, never> & {
  *   <ListItemText primary="Inbox" secondary="3 unread" />
  * </ListItem>
  * ```
+ * @see https://mui.com/material-ui/react-list/
  */
 const ListItemText = forwardRef(ListItemTextImpl) as (
   props: ListItemTextProps & { ref?: React.Ref<HTMLDivElement> },

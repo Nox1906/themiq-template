@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Dialog as MuiDialog,
   type DialogProps as MuiDialogProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Dialog.styles";
 
 const useStyles = makeStyles({ name: "Dialog" });
-
 
 function DialogImpl(
   { className, classes: overrideClasses, ...props }: DialogProps,
@@ -82,6 +81,7 @@ export type DialogProps = Omit<MuiDialogProps, never> & {
  *
  * All MUI `DialogProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-dialog/
  */
 const Dialog = forwardRef(DialogImpl) as (
   props: DialogProps & { ref?: React.Ref<HTMLDivElement> },

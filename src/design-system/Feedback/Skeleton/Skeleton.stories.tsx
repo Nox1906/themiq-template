@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Box from "../../Layout/Box";
+
 import Avatar from "../../DataDisplay/Avatar";
 import Typography from "../../DataDisplay/Typography";
-
+import Box from "../../Layout/Box";
 import Skeleton from "./Skeleton";
 
 const meta: Meta<typeof Skeleton> = {

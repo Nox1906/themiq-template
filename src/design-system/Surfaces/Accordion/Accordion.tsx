@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Accordion as MuiAccordion,
   type AccordionProps as MuiAccordionProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Accordion.styles";
 
 const useStyles = makeStyles({ name: "Accordion" });
-
 
 function AccordionImpl(
   { className, classes: overrideClasses, ...props }: AccordionProps,
@@ -91,6 +90,7 @@ export type AccordionProps = Omit<MuiAccordionProps, never> & {
  *
  * All MUI `AccordionProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-accordion/
  */
 const Accordion = forwardRef(AccordionImpl) as (
   props: AccordionProps & { ref?: React.Ref<HTMLDivElement> },

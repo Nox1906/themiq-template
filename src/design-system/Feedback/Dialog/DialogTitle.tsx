@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   DialogTitle as MuiDialogTitle,
   type DialogTitleProps as MuiDialogTitleProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./DialogTitle.styles";
 
 const useStyles = makeStyles({ name: "DialogTitle" });
-
 
 function DialogTitleImpl(
   { className, classes: overrideClasses, ...props }: DialogTitleProps,
@@ -55,6 +54,7 @@ export type DialogTitleProps = Omit<MuiDialogTitleProps, never> & {
  *   <DialogContent>...</DialogContent>
  * </Dialog>
  * ```
+ * @see https://mui.com/material-ui/react-dialog/
  */
 const DialogTitle = forwardRef(DialogTitleImpl) as (
   props: DialogTitleProps & { ref?: React.Ref<HTMLDivElement> },

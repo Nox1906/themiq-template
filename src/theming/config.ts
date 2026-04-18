@@ -9,8 +9,8 @@
  * It can be safely deleted once all references have been updated.
  */
 
-import { matchPath } from "react-router-dom";
 import type { Theme } from "@mui/material";
+import { matchPath } from "react-router-dom";
 
 /**
  * The URL segment captured from `/:appSlug`.

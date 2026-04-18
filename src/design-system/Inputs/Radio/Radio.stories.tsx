@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FormControl, FormControlLabel, FormLabel, RadioGroup } from "../Form";
 
+import { FormControl, FormControlLabel, FormLabel, RadioGroup } from "../Form";
 import Radio from "./Radio";
 
 const meta: Meta<typeof Radio> = {

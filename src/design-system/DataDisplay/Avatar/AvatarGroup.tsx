@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   AvatarGroup as MuiAvatarGroup,
   type AvatarGroupProps as MuiAvatarGroupProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./AvatarGroup.styles";
 
 const useStyles = makeStyles({ name: "AvatarGroup" });
-
 
 function AvatarGroupImpl(
   { className, classes: overrideClasses, ...props }: AvatarGroupProps,
@@ -64,6 +63,7 @@ export type AvatarGroupProps = Omit<MuiAvatarGroupProps, never> & {
  *   <Avatar>CB</Avatar>
  * </AvatarGroup>
  * ```
+ * @see https://mui.com/material-ui/react-avatar/
  */
 const AvatarGroup = forwardRef(AvatarGroupImpl) as (
   props: AvatarGroupProps & { ref?: React.Ref<HTMLDivElement> },

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   AccordionDetails as MuiAccordionDetails,
   type AccordionDetailsProps as MuiAccordionDetailsProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./AccordionDetails.styles";
 
 const useStyles = makeStyles({ name: "AccordionDetails" });
-
 
 function AccordionDetailsImpl(
   { className, classes: overrideClasses, ...props }: AccordionDetailsProps,
@@ -60,6 +59,7 @@ export type AccordionDetailsProps = Omit<MuiAccordionDetailsProps, never> & {
  *   </AccordionDetails>
  * </Accordion>
  * ```
+ * @see https://mui.com/material-ui/react-accordion/
  */
 const AccordionDetails = forwardRef(AccordionDetailsImpl) as (
   props: AccordionDetailsProps & { ref?: React.Ref<HTMLDivElement> },

@@ -1,4 +1,5 @@
 import { Routes } from "react-router-dom";
+
 import PlatformTheme from "./theming/PlatformTheme";
 
 function App() {

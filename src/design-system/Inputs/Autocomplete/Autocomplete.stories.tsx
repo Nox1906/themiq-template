@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import TextField from "../TextField";
 
+import TextField from "../TextField";
 import Autocomplete from "./Autocomplete";
 
 const FRUITS = [

@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   MenuItem as MuiMenuItem,
   type MenuItemProps as MuiMenuItemProps,
   type MenuItemTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./MenuItem.styles";
 
@@ -108,6 +108,7 @@ export type MenuItemProps<
  *
  * All MUI `MenuItemProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-menu/
  */
 const MenuItem = forwardRef(MenuItemImpl) as <
   BaseComponent extends ElementType = MenuItemTypeMap["defaultComponent"],

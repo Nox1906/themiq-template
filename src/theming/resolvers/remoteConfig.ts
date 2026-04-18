@@ -45,9 +45,10 @@
  * ```
  */
 
-import { useState, useEffect } from "react";
+import { useEffect,useState } from "react";
+
 import type { ThemeSpec } from "../themes/spec";
-import type { UseThemeResolver, ResolverConfig } from "./types";
+import type { ResolverConfig,UseThemeResolver } from "./types";
 
 /** Shape of the JSON body returned by the theme config endpoint. */
 interface ThemeConfigResponse {
@@ -128,7 +129,7 @@ export function createRemoteConfigResolver(
       return () => controller.abort();
       // `endpoint` and `fallback` are captured from the factory closure and
       // are stable for the lifetime of the resolver — safe to omit from deps.
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+       
     }, []);
 
     return themeName;

@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Badge as MuiBadge,
   type BadgeProps as MuiBadgeProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Badge.styles";
 
 const useStyles = makeStyles({ name: "Badge" });
-
 
 function BadgeImpl(
   { className, classes: overrideClasses, ...props }: BadgeProps,
@@ -82,6 +81,7 @@ export type BadgeProps = Omit<MuiBadgeProps, never> & {
  *
  * All MUI `BadgeProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-badge/
  */
 const Badge = forwardRef(BadgeImpl) as (
   props: BadgeProps & { ref?: React.Ref<HTMLSpanElement> },

@@ -1,8 +1,9 @@
+import * as MuiIcons from "@mui/icons-material";
+import { SvgIcon, type SvgIconProps } from "@mui/material";
 import camelCase from "lodash.camelcase";
 import upperFirst from "lodash.upperfirst";
 import * as React from "react";
-import * as MuiIcons from "@mui/icons-material";
-import { SvgIcon, type SvgIconProps } from "@mui/material";
+
 import * as customSvgs from "./svg";
 
 // Wrap raw SVG components so they accept SvgIconProps (color, fontSize, className, etc.)

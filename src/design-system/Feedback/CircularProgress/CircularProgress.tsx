@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   CircularProgress as MuiCircularProgress,
   type CircularProgressProps as MuiCircularProgressProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./CircularProgress.styles";
 
 const useStyles = makeStyles({ name: "CircularProgress" });
-
 
 function CircularProgressImpl(
   { className, classes: overrideClasses, ...props }: CircularProgressProps,
@@ -73,6 +72,7 @@ export type CircularProgressProps = Omit<MuiCircularProgressProps, never> & {
  *
  * All MUI `CircularProgressProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-progress/
  */
 const CircularProgress = forwardRef(CircularProgressImpl) as (
   props: CircularProgressProps & { ref?: React.Ref<HTMLSpanElement> },

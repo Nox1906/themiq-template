@@ -1,8 +1,8 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import Box from "../../Layout/Box";
-import Typography from "../../DataDisplay/Typography";
+import React from "react";
 
+import Typography from "../../DataDisplay/Typography";
+import Box from "../../Layout/Box";
 import CircularProgress from "./CircularProgress";
 
 const meta: Meta<typeof CircularProgress> = {

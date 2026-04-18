@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Radio as MuiRadio,
   type RadioProps as MuiRadioProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./Radio.styles";
 
 const useStyles = makeStyles({ name: "Radio" });
-
 
 function RadioImpl(
   { className, classes: overrideClasses, ...props }: RadioProps,
@@ -76,6 +75,7 @@ export type RadioProps = Omit<MuiRadioProps, never> & {
  *
  * All MUI `RadioProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-radio-button/
  */
 const Radio = forwardRef(RadioImpl) as (
   props: RadioProps & { ref?: React.Ref<HTMLButtonElement> },

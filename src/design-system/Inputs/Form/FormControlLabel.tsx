@@ -1,14 +1,13 @@
-import { forwardRef, type JSX } from "react";
-import React from "react";
 import {
   FormControlLabel as MuiFormControlLabel,
   type FormControlLabelProps as MuiFormControlLabelProps,
 } from "@mui/material";
+import React from "react";
+import { forwardRef, type JSX } from "react";
 
 import makeStyles from "./FormControlLabel.styles";
 
 const useStyles = makeStyles({ name: "FormControlLabel" });
-
 
 function FormControlLabelImpl(
   { className, classes: overrideClasses, ...props }: FormControlLabelProps,
@@ -56,6 +55,7 @@ export type FormControlLabelProps = Omit<MuiFormControlLabelProps, never> & {
  *   label="Accept terms and conditions"
  * />
  * ```
+ * @see https://mui.com/material-ui/react-text-field/#form-props
  */
 const FormControlLabel = forwardRef(FormControlLabelImpl) as (
   props: FormControlLabelProps & { ref?: React.Ref<HTMLLabelElement> },

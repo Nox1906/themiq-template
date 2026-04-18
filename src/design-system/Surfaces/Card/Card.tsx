@@ -1,10 +1,10 @@
-import { type ElementType, forwardRef, type JSX } from "react";
-import React from "react";
 import {
   Card as MuiCard,
   type CardProps as MuiCardProps,
   type CardTypeMap,
 } from "@mui/material";
+import React from "react";
+import { type ElementType, forwardRef, type JSX } from "react";
 
 import makeStyles from "./Card.styles";
 
@@ -129,6 +129,7 @@ export type CardProps<
  *
  * All MUI `CardProps` are forwarded unchanged.
  * Style overrides can be applied via the active theme.
+ * @see https://mui.com/material-ui/react-card/
  */
 const Card = forwardRef(CardImpl) as <
   BaseComponent extends ElementType = CardTypeMap["defaultComponent"],
