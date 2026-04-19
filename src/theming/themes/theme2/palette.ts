@@ -7,8 +7,8 @@ import type { ThemeSpecPalette } from "../spec/palette";
  * Maps design-token primitives (`../primitives`) to the semantic roles
  * defined by {@link ThemeSpecPalette}.
  *
- * Currently identical to Theme1's palette — diverge colors here as the
- * Theme2 design evolves.
+ * Friendly/consumer-oriented palette — purple primary, plum secondary.
+ * Designed to feel creative and approachable (Canva / Figma style).
  *
  * ### Changing a color
  * Replace the primitive reference with another entry from `primitives.ts`
@@ -42,26 +42,27 @@ import type { ThemeSpecPalette } from "../spec/palette";
  */
 const palette: ThemeSpecPalette = {
   /**
-   * Primary — blue family.
-   * Full scale included as a reference; add only the keys your components use.
+   * Primary — purple family.
+   * Creative, approachable, modern — used by Canva, Figma, and
+   * consumer-facing products that want to feel energetic and friendly.
    */
   primary: {
-    main: primitives.blue[500],
-    light: primitives.blue[50],
-    dark: primitives.blue[700],
+    main: primitives.purple[500],
+    light: primitives.purple[50],
+    dark: primitives.purple[700],
     contrastText: primitives.white,
-    "0": primitives.blue[0],
-    "100": primitives.blue[100],
-    "300": primitives.blue[300],
-    "700": primitives.blue[700],
-    "900": primitives.blue[900],
+    "0": primitives.purple[0],
+    "100": primitives.purple[100],
+    "300": primitives.purple[300],
+    "700": primitives.purple[700],
+    "900": primitives.purple[900],
   },
 
-  /** Secondary — stone (grey) family. */
+  /** Secondary — plum (warm magenta) family. Adds warmth alongside the purple primary. */
   secondary: {
-    main: primitives.stone[500],
-    light: primitives.stone[50],
-    dark: primitives.stone[700],
+    main: primitives.plum[500],
+    light: primitives.plum[50],
+    dark: primitives.plum[700],
     contrastText: primitives.white,
   },
 
@@ -127,9 +128,9 @@ const palette: ThemeSpecPalette = {
     white: primitives.white,
   },
 
-  /** Light blueish-white page background. */
+  /** Soft lavender wash — warm, inviting background for a consumer-friendly feel. */
   background: {
-    default: primitives.blue[25],
+    default: primitives.purple[0],
   },
 };
 

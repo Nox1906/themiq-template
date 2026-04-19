@@ -25,13 +25,13 @@ import type { ThemeSpecShape } from "../spec/shape";
  */
 const shape: ThemeSpecShape = {
   /** MUI's primary anchor — inherited by most MUI components automatically. */
-  borderRadius: 8,
+  borderRadius: 6,
 
   none: 0, // sharp corners — data tables, code blocks
-  xs: 4, // inline chips, badges, small tag pills
-  sm: 8, // buttons, cards, standard inputs  (= borderRadius)
-  md: 12, // popovers, menus, panel corners
-  lg: 16, // dialogs, drawers, notification toasts
+  xs: 2, // inline chips, badges, small tag pills
+  sm: 6, // buttons, cards, standard inputs  (= borderRadius)
+  md: 8, // popovers, menus, panel corners
+  lg: 12, // dialogs, drawers, notification toasts
   full: 9999, // fully rounded — avatars, toggle switches
 };
 

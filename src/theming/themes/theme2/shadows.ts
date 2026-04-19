@@ -42,13 +42,13 @@ void ShadowIndex;
 
 const shadows: string[] = [
   "none", // 0  - None
-  "0px 1px 2px 0px rgba(21, 21, 21, 0.08)", // 1  - Xs
-  "0px 1px 2px 0px rgba(21, 21, 21, 0.08), 0px 2px 4px 0px rgba(21, 21, 21, 0.08)", // 2  - Sm
-  "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 6px 12px -2px rgba(21, 21, 21, 0.08)", // 3  - Md
-  "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 12px 16px -4px rgba(21, 21, 21, 0.08)", // 4  - Lg
-  "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 20px 24px -4px rgba(21, 21, 21, 0.08)", // 5  - Xl
-  "0px 0px 4px 0px #0343B1", // 6  - Focus
-  `0px 0px 8px 0px ${primitives.blue[100]}`, // 7  - AiFocus
+  "0px 1px 4px 0px rgba(114, 71, 180, 0.12)", // 1  - Xs
+  "0px 2px 6px 0px rgba(114, 71, 180, 0.10), 0px 1px 2px 0px rgba(114, 71, 180, 0.08)", // 2  - Sm
+  "0px 4px 12px -2px rgba(114, 71, 180, 0.12), 0px 8px 16px -2px rgba(114, 71, 180, 0.08)", // 3  - Md
+  "0px 6px 16px -4px rgba(114, 71, 180, 0.14), 0px 16px 24px -4px rgba(114, 71, 180, 0.10)", // 4  - Lg
+  "0px 8px 24px -4px rgba(114, 71, 180, 0.16), 0px 24px 32px -4px rgba(114, 71, 180, 0.10)", // 5  - Xl
+  "0px 0px 0px 3px #9766E2", // 6  - Focus
+  `0px 0px 8px 0px ${primitives.purple[100]}`, // 7  - AiFocus
   `0px 0px 8px 0px ${primitives.stone[300]}`, // 8  - AiRevertFocus
   `0px 4px 8px -1px ${primitives.blackOpacity} inset`, // 9  - Inset
   "0px 3px 0px 0px", // 10 - PrimaryPress

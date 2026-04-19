@@ -19,13 +19,7 @@ const maxLinesCapped = (maxLines?: number): CSSObject => ({
 
 const singleLineOverflow: CSSObject = { overflowWrap: "break-word" };
 
-export default createStyles<never, { maxLines?: number }>({
-  THEME1: (_, props) => ({
-    maxLinesCapped: maxLinesCapped(props?.maxLines),
-    singleLineOverflow,
-  }),
-  THEME2: (_, props) => ({
-    maxLinesCapped: maxLinesCapped(props?.maxLines),
-    singleLineOverflow,
-  }),
-});
+export default createStyles<never, { maxLines?: number }>((_, props) => ({
+  maxLinesCapped: maxLinesCapped(props?.maxLines),
+  singleLineOverflow,
+}));

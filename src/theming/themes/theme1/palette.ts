@@ -44,22 +44,23 @@ import type { ThemeSpecPalette } from "../spec/palette";
  */
 const palette: ThemeSpecPalette = {
   /**
-   * Primary — blue family.
-   * Full scale included as a reference; add only the keys your components use.
+   * Primary — teal family.
+   * Clean, trusted enterprise colour — used by Salesforce, Asana, and
+   * other professional SaaS products. Pairs with a neutral-grey secondary.
    */
   primary: {
-    main: primitives.blue[500],
-    light: primitives.blue[50],
-    dark: primitives.blue[700],
+    main: primitives.teal[500],
+    light: primitives.teal[50],
+    dark: primitives.teal[700],
     contrastText: primitives.white,
-    "0": primitives.blue[0],
-    "100": primitives.blue[100],
-    "300": primitives.blue[300],
-    "700": primitives.blue[700],
-    "900": primitives.blue[900],
+    "0": primitives.teal[0],
+    "100": primitives.teal[100],
+    "300": primitives.teal[300],
+    "700": primitives.teal[700],
+    "900": primitives.teal[900],
   },
 
-  /** Secondary — stone (grey) family. */
+  /** Secondary — stone (cool grey) family. */
   secondary: {
     main: primitives.stone[500],
     light: primitives.stone[50],
@@ -129,9 +130,9 @@ const palette: ThemeSpecPalette = {
     white: primitives.white,
   },
 
-  /** Light blueish-white page background. */
+  /** Clean white background — enterprise/professional style (Stripe, Linear). */
   background: {
-    default: primitives.blue[25],
+    default: primitives.white,
   },
 };
 

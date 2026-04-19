@@ -44,41 +44,41 @@ function pixelsToRem(pixels: number) {
 
 const typography: ThemeSpecTypography = {
   htmlFontSize,
-  fontFamily: '"Helvetica", "Arial", sans-serif',
+  fontFamily: '"Inter", "Helvetica Neue", "Helvetica", sans-serif',
 
   // ── Headings ───────────────────────────────────────────────────────────────────────
   h1: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(32),
-    letterSpacing: 0,
+    letterSpacing: -0.5,
     lineHeight: pixelsToRem(40),
   },
   h2: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(24),
-    letterSpacing: 0,
+    letterSpacing: -0.25,
     lineHeight: pixelsToRem(32),
   },
   h3: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(20),
     letterSpacing: 0,
     lineHeight: pixelsToRem(28),
   },
   h4: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(16),
     letterSpacing: 0,
     lineHeight: pixelsToRem(22),
   },
   h5: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(14),
     letterSpacing: 0,
     lineHeight: pixelsToRem(20),
   },
   h6: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: pixelsToRem(13),
     letterSpacing: 0,
     lineHeight: pixelsToRem(18),

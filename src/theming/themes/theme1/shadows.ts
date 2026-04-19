@@ -47,7 +47,7 @@ const shadows: string[] = [
   "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 6px 12px -2px rgba(21, 21, 21, 0.08)", // 3  - Md
   "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 12px 16px -4px rgba(21, 21, 21, 0.08)", // 4  - Lg
   "0px 2px 8px -2px rgba(21, 21, 21, 0.08), 0px 20px 24px -4px rgba(21, 21, 21, 0.08)", // 5  - Xl
-  "0px 0px 4px 0px #0343B1", // 6  - Focus
+  "0px 0px 0px 3px #1A696B", // 6  - Focus
   `0px 0px 8px 0px ${primitives.blue[100]}`, // 7  - AiFocus
   `0px 0px 8px 0px ${primitives.stone[300]}`, // 8  - AiRevertFocus
   `0px 4px 8px -1px ${primitives.blackOpacity} inset`, // 9  - Inset
