@@ -107,11 +107,11 @@ const palette: ThemeSpecPalette = {
     "900": primitives.stone[900],
   },
 
-  /** Neutral dark — deep stone for sidebars and inverted surfaces. */
+  /** Neutral dark — deep brand purple for header/sidebar surfaces in Theme2. */
   "neutral-dark": {
-    main: primitives.stone[700],
-    light: primitives.stone[100],
-    dark: primitives.stone[900],
+    main: primitives.purple[700],
+    light: primitives.purple[100],
+    dark: primitives.purple[900],
     contrastText: primitives.white,
   },
 

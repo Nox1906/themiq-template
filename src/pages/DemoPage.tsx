@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useTheme } from "@mui/material";
+
 import {
   Avatar,
   Badge,
@@ -16,8 +18,31 @@ import {
   Typography,
 } from "../design-system";
 
+const themeConfig = {
+  theme1: {
+    brand: "Acme Enterprise",
+    tagline: "Enterprise management platform",
+    slug: "theme1-app",
+    switchLabel: "Switch to Friendly Co. (Theme 2)",
+    switchSlug: "theme2-app",
+    description:
+      "A clean, professional workspace for enterprise teams. Teal palette, sharp corners, and dense typography optimised for data-heavy workflows.",
+  },
+  theme2: {
+    brand: "Friendly Co.",
+    tagline: "Your creative workspace",
+    slug: "theme2-app",
+    switchLabel: "Switch to Acme Enterprise (Theme 1)",
+    switchSlug: "theme1-app",
+    description:
+      "A warm, approachable product for creative teams. Purple palette, rounded corners, and expressive typography built for engagement.",
+  },
+} as const;
+
 export default function DemoPage() {
   const [tab, setTab] = useState(0);
+  const theme = useTheme();
+  const cfg = themeConfig[theme.name] ?? themeConfig.theme1;
 
   return (
     <Box
@@ -39,9 +64,14 @@ export default function DemoPage() {
           justifyContent: "space-between",
         }}
       >
-        <Typography variant="h4" sx={{ color: "common.white" }}>
-          Acme Enterprise / Friendly Co.
-        </Typography>
+        <Box>
+          <Typography variant="h4" sx={{ color: "common.white" }}>
+            {cfg.brand}
+          </Typography>
+          <Typography variant="caption" sx={{ color: "neutral-dark.light" }}>
+            {cfg.tagline}
+          </Typography>
+        </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Chip label="Theme demo" color="primary" size="small" />
@@ -189,7 +219,7 @@ export default function DemoPage() {
         </Box>
 
         {/* ── Button showcase ──────────────────────────────────────────── */}
-        <Card>
+        <Card sx={{ mb: 3 }}>
           <CardHeader
             title="Components"
             subheader="Button variants and states"
@@ -224,6 +254,52 @@ export default function DemoPage() {
               ].map((tag) => (
                 <Chip key={tag} label={tag} color="primary" size="small" />
               ))}
+            </Box>
+          </CardContent>
+        </Card>
+
+        {/* ── Theme switcher ───────────────────────────────────────────── */}
+        <Card
+          sx={{
+            border: 2,
+            borderColor: "primary.main",
+            bgcolor: "primary.light",
+          }}
+        >
+          <CardContent>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                gap: 2,
+              }}
+            >
+              <Box>
+                <Typography variant="overline" color="primary.dark">
+                  Active theme
+                </Typography>
+                <Typography variant="h4" color="primary.dark">
+                  {cfg.brand}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ mt: 0.5, maxWidth: 480 }}
+                >
+                  {cfg.description}
+                </Typography>
+              </Box>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() =>
+                  (window.location.href = `/${cfg.switchSlug}/`)
+                }
+              >
+                {cfg.switchLabel}
+              </Button>
             </Box>
           </CardContent>
         </Card>
