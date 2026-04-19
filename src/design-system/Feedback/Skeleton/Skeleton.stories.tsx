@@ -10,6 +10,12 @@ const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    variant: "rectangular",
+    animation: "pulse",
+    width: 240,
+    height: 80,
+  },
   argTypes: {
     variant: {
       control: "select",

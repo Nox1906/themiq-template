@@ -2,7 +2,7 @@ import * as MuiIcons from "@mui/icons-material";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Icon, { type IconProps } from "./Icon";
-import { customIconNames,type IconName } from "./iconUtils";
+import { customIconNames, type IconName } from "./iconUtils";
 
 const baseIconNames = (Object.keys(MuiIcons) as IconName[]).filter(
   (name) => !/(Outlined|Rounded|Sharp|TwoTone)$/.test(name),
@@ -65,6 +65,10 @@ const meta: Meta<typeof Icon> = {
   component: Icon,
   title: "Design System/Data Display/Icon",
   tags: ["autodocs"],
+  args: {
+    name: "Home",
+    size: "md",
+  },
   argTypes: {
     name: {
       options: allSelectableNames,

@@ -8,6 +8,11 @@ const meta: Meta<typeof Radio> = {
   component: Radio,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    color: "primary",
+    size: "medium",
+    disabled: false,
+  },
   argTypes: {
     disabled: { control: "boolean" },
     size: { control: "select", options: ["small", "medium"] },

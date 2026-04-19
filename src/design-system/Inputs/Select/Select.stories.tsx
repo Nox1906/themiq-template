@@ -26,6 +26,13 @@ const meta = {
   component: Select,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    variant: "outlined",
+    size: "medium",
+    disabled: false,
+    error: false,
+    multiple: false,
+  },
   argTypes: {
     variant: { control: "select", options: ["outlined", "filled", "standard"] },
     size: { control: "select", options: ["small", "medium"] },

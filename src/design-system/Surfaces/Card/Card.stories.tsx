@@ -16,6 +16,10 @@ const meta: Meta<typeof Card> = {
   component: Card,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    variant: "elevation",
+    raised: false,
+  },
   argTypes: {
     variant: {
       control: "select",

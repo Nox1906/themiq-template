@@ -9,6 +9,12 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    orientation: "horizontal",
+    variant: "standard",
+    textColor: "primary",
+    indicatorColor: "primary",
+  },
   argTypes: {
     orientation: {
       control: "select",

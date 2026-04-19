@@ -27,9 +27,10 @@ const preview: Preview = {
         theme,
         children,
       }: {
-        theme: ThemeSpec["name"];
+        theme: ThemeSpec;
         children: React.ReactNode;
-      }) => React.createElement(ThemeWrapper, { themeName: theme, children }),
+      }) =>
+        React.createElement(ThemeWrapper, { themeName: theme.name, children }),
     }),
   ],
 };

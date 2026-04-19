@@ -11,6 +11,10 @@ const meta: Meta<typeof List> = {
   component: List,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    dense: false,
+    disablePadding: false,
+  },
   argTypes: {
     dense: { control: "boolean" },
     disablePadding: { control: "boolean" },

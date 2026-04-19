@@ -9,6 +9,10 @@ const meta: Meta<typeof Avatar> = {
   component: Avatar,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    variant: "circular",
+    children: "JD",
+  },
   argTypes: {
     variant: {
       control: "select",

@@ -13,6 +13,10 @@ const meta: Meta<typeof Drawer> = {
   component: Drawer,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    anchor: "left",
+    variant: "temporary",
+  },
   argTypes: {
     anchor: {
       control: "select",

@@ -10,6 +10,10 @@ const meta: Meta<typeof Divider> = {
   component: Divider,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    orientation: "horizontal",
+    variant: "fullWidth",
+  },
   argTypes: {
     orientation: {
       control: "select",

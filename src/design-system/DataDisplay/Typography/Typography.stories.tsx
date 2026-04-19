@@ -9,6 +9,12 @@ const meta: Meta<typeof Typography> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  args: {
+    variant: "body1",
+    children: "The quick brown fox jumps over the lazy dog.",
+    align: "left",
+    gutterBottom: false,
+  },
   argTypes: {
     variant: {
       control: "select",

@@ -8,6 +8,12 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    color: "primary",
+    size: "medium",
+    disabled: false,
+    indeterminate: false,
+  },
   argTypes: {
     disabled: { control: "boolean" },
     indeterminate: { control: "boolean" },

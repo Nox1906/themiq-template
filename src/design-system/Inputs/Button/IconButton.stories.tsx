@@ -8,6 +8,13 @@ const meta: Meta<typeof IconButton> = {
   component: IconButton,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    name: "Edit",
+    color: "primary",
+    size: "medium",
+    iconSize: "md",
+    disabled: false,
+  },
   argTypes: {
     color: {
       control: "select",

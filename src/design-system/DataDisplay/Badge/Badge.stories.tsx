@@ -8,6 +8,12 @@ const meta: Meta<typeof Badge> = {
   component: Badge,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    color: "primary",
+    variant: "standard",
+    badgeContent: 4,
+    overlap: "rectangular",
+  },
   argTypes: {
     color: {
       control: "select",

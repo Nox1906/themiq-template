@@ -10,6 +10,12 @@ const meta: Meta<typeof CircularProgress> = {
   component: CircularProgress,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    variant: "indeterminate",
+    color: "primary",
+    size: 40,
+    thickness: 3.6,
+  },
   argTypes: {
     variant: {
       control: "select",

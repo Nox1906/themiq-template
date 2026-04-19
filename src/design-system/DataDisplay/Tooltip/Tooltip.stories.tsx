@@ -10,6 +10,12 @@ const meta: Meta<typeof Tooltip> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  args: {
+    text: "This is a helpful tooltip.",
+    color: "neutral-dark",
+    placement: "top",
+    disableInteractive: false,
+  },
   argTypes: {
     text: {
       control: "text",

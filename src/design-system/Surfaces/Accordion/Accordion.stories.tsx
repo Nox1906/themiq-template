@@ -11,6 +11,11 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    disabled: false,
+    disableGutters: false,
+    square: false,
+  },
   argTypes: {
     disabled: { control: "boolean" },
     disableGutters: { control: "boolean" },

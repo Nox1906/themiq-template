@@ -8,6 +8,11 @@ const meta: Meta<typeof Alert> = {
   component: Alert,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    severity: "info",
+    variant: "standard",
+    children: "This is an informational message.",
+  },
   argTypes: {
     severity: {
       control: "select",

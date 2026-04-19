@@ -8,6 +8,11 @@ const meta: Meta<typeof Paper> = {
   component: Paper,
   parameters: { layout: "padded" },
   tags: ["autodocs"],
+  args: {
+    elevation: 2,
+    variant: "elevation",
+    square: false,
+  },
   argTypes: {
     elevation: {
       control: { type: "number", min: 0, max: 24, step: 1 },

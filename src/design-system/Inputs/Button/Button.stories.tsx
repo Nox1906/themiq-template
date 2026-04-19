@@ -12,68 +12,124 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary", "tertiary", "destructive"],
+      // MUI Button accepts: contained | outlined | text
+      options: ["contained", "outlined", "text"],
+    },
+    color: {
+      control: "select",
+      options: [
+        "primary",
+        "secondary",
+        "error",
+        "warning",
+        "info",
+        "success",
+        "inherit",
+      ],
     },
     size: {
       control: "select",
-      options: ["medium", "large"],
+      options: ["small", "medium", "large"],
     },
     disabled: {
       control: "boolean",
     },
+  },
+  args: {
+    variant: "contained",
+    color: "primary",
+    size: "medium",
+    disabled: false,
+    children: "Button",
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+// ─── Semantic intents ─────────────────────────────────────────────────────────
+
+/** Primary CTA — filled, prominent */
+export const Contained: Story = {
+  name: "Contained (primary CTA)",
   args: {
-    variant: "primary",
-    children: "Primary Button",
+    variant: "contained",
+    color: "primary",
+    children: "Save changes",
   },
 };
 
-export const Secondary: Story = {
+/** Secondary CTA — bordered, less prominent */
+export const Outlined: Story = {
+  name: "Outlined (secondary CTA)",
   args: {
-    variant: "secondary",
-    children: "Secondary Button",
+    variant: "outlined",
+    color: "primary",
+    children: "Cancel",
   },
 };
 
-export const Tertiary: Story = {
+/** Ghost / tertiary — no background or border */
+export const Text: Story = {
+  name: "Text (ghost / tertiary)",
   args: {
-    variant: "tertiary",
-    children: "Tertiary Button",
+    variant: "text",
+    color: "primary",
+    children: "Learn more",
   },
 };
 
+/** Destructive action — error colour */
 export const Destructive: Story = {
   args: {
-    variant: "destructive",
-    children: "Destructive Button",
+    variant: "contained",
+    color: "error",
+    children: "Delete",
   },
 };
 
-export const Large: Story = {
+export const DestructiveOutlined: Story = {
+  name: "Destructive — outlined",
   args: {
-    variant: "primary",
-    size: "large",
-    children: "Large Button",
+    variant: "outlined",
+    color: "error",
+    children: "Remove",
   },
 };
+
+// ─── Sizes ────────────────────────────────────────────────────────────────────
+
+export const SizeSmall: Story = {
+  name: "Size — small",
+  args: { variant: "contained", size: "small", children: "Small" },
+};
+
+export const SizeMedium: Story = {
+  name: "Size — medium",
+  args: { variant: "contained", size: "medium", children: "Medium" },
+};
+
+export const SizeLarge: Story = {
+  name: "Size — large",
+  args: { variant: "contained", size: "large", children: "Large" },
+};
+
+// ─── States ───────────────────────────────────────────────────────────────────
 
 export const Disabled: Story = {
   args: {
-    variant: "primary",
-    children: "Disabled Button",
+    variant: "contained",
+    children: "Disabled",
     disabled: true,
   },
 };
 
+// ─── Playground ───────────────────────────────────────────────────────────────
+
 export const Playground: Story = {
   args: {
-    variant: "primary",
+    variant: "contained",
+    color: "primary",
     size: "medium",
     children: "Click me",
     disabled: false,

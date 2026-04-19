@@ -7,6 +7,15 @@ const meta: Meta<typeof TextField> = {
   component: TextField,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
+  args: {
+    variant: "outlined",
+    label: "Label",
+    size: "medium",
+    disabled: false,
+    error: false,
+    fullWidth: false,
+    multiline: false,
+  },
   argTypes: {
     variant: { control: "select", options: ["outlined", "filled", "standard"] },
     size: { control: "select", options: ["small", "medium"] },
