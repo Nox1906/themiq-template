@@ -11,7 +11,8 @@ export default createStyles((theme) => ({
     },
     "& .MuiSwitch-track": {
       borderRadius: theme.shape.full,
-      backgroundColor: theme.palette.neutral["300"] ?? theme.palette.neutral.main,
+      backgroundColor:
+        theme.palette.neutral["300"] ?? theme.palette.neutral.main,
     },
     "& .MuiSwitch-thumb": {
       boxShadow: "none",

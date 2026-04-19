@@ -15,7 +15,8 @@ export default createStyles((theme) => ({
       borderRadius: theme.shape.xs,
       fontSize: theme.typography.body2.fontSize,
       "&.Mui-focused": {
-        backgroundColor: theme.palette.primary["0"] ?? theme.palette.primary.light,
+        backgroundColor:
+          theme.palette.primary["0"] ?? theme.palette.primary.light,
       },
       "&[aria-selected='true']": {
         backgroundColor: theme.palette.primary.light,

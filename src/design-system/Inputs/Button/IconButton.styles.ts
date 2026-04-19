@@ -5,7 +5,8 @@ export default createStyles((theme) => ({
     borderRadius: theme.shape.sm,
     color: theme.palette.neutral.main,
     "&:hover": {
-      backgroundColor: theme.palette.primary["0"] ?? theme.palette.primary.light,
+      backgroundColor:
+        theme.palette.primary["0"] ?? theme.palette.primary.light,
       color: theme.palette.primary.main,
     },
     "&.MuiIconButton-colorPrimary": {
