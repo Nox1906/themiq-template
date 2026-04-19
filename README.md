@@ -196,3 +196,37 @@ Configured in both `tsconfig.app.json` (for TypeScript) and `vite.config.ts` (fo
    <Route path="/my-path" element={<MyPage />} />;
    ```
 3. Use components from `@/design-system` inside the page
+
+---
+
+## Live demo (`showcase` branch)
+
+The `showcase` branch extends `main` with a full working demo. Run `npm run dev` and open the URLs below to see the two themes side-by-side:
+
+| URL | Theme |
+|-----|-------|
+| `http://localhost:5173/theme1-app/` | **Theme 1 — Acme Enterprise** (teal, sharp, Inter) |
+| `http://localhost:5173/theme2-app/` | **Theme 2 — Friendly Co.** (purple, rounded, Nunito) |
+
+A **Switch Theme** button is embedded in the demo page for one-click comparison.
+
+### What makes the themes visually distinct
+
+| Token | Theme 1 (Professional) | Theme 2 (Friendly) |
+|---|---|---|
+| Primary color | Teal `#338B8D` | Purple `#7247B4` |
+| Secondary color | Stone grey | Plum magenta |
+| Page background | Pure white | Soft lavender `#F7F1FF` |
+| Header/sidebar (`neutral-dark`) | Dark grey `#3D3D3D` | Deep purple `#593099` |
+| Border radius (base) | 6 px (sharp) | 12 px (rounded) |
+| Font family | Inter | Nunito / Poppins |
+| Heading weight | 600 (semi-bold) | 700 (bold) |
+
+### Completed milestones (`showcase`)
+
+- ✅ 57 MUI component wrappers with token-driven styles (`createStyles`)
+- ✅ Both themes styled with real palette, shape, and typography tokens
+- ✅ Storybook theme switcher fixed (`withThemeFromJSXProvider` typed correctly)
+- ✅ All 23 story files use correct MUI prop values + `meta.args` defaults for instant previews
+- ✅ `DemoPage` is theme-aware: shows brand name, tagline, and description per active theme
+- ✅ Live theme switcher embedded in the demo page (`/theme1-app/` ↔ `/theme2-app/`)
