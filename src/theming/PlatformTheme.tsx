@@ -44,8 +44,7 @@ const muiCache = createCache({ key: "mui", prepend: true });
  * ### How the theme is selected
  * The active theme name is provided by the **resolver hook** exported from
  * `resolvers/index.ts`. The resolver encapsulates the selection strategy
- * (URL slug, user role, OS preference, etc.) so this component stays
- * strategy-agnostic.
+ * so this component stays strategy-agnostic.
  *
  * ### Changing the selection strategy
  * Edit **`resolvers/index.ts`** only — swap the import and factory call.
@@ -66,9 +65,8 @@ export default function PlatformTheme({ children }: React.PropsWithChildren) {
   /**
    * The resolved theme name for this render, provided by the active resolver.
    *
-   * To change how the theme is selected (URL slug, user role, OS preference,
-   * remote config, etc.), update `resolvers/index.ts` — no changes are needed
-   * in this file.
+   * To change how the theme is selected, update `resolvers/index.ts` —
+   * no changes are needed in this file.
    */
   const themeName = useThemeResolver();
 

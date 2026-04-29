@@ -87,11 +87,9 @@ src/
 │   ├── config.ts             # (deprecated) URL-slug resolver — moved to resolvers/
 │   ├── resolvers/            # Pluggable theme-selection strategies
 │   │   ├── index.ts          # ← EDIT THIS FILE to change the active strategy
-│   │   ├── urlSlug.ts        # Strategy: URL first-path-segment (included)
-│   │   └── types.ts          # UseThemeResolver / UseOptionalThemeResolver contracts
-│   │   # 11 additional strategies (queryParam, userRole, tenant, localStorage,
-│   │   # uiToggle, osPreference, hostname, remoteConfig, abExperiment,
-│   │   # propInjection, composed) — available in Themiq Pro
+   │   │   ├── urlSlug.ts        # URL first-path-segment strategy
+   │   │   └── types.ts          # UseThemeResolver contract
+   │   │   # More resolver types available in Themiq Pro
 │   ├── themes/               # Theme implementations
 │   │   ├── spec/             # TypeScript contracts (ThemeSpec and sub-types)
 │   │   ├── theme1/           # Theme 1 implementation
@@ -137,7 +135,7 @@ Open `src/theming/resolvers/index.ts` and swap the import + factory call. That i
 
 This template includes the **URL slug** resolver. It selects a theme from the first URL path segment — e.g. `/theme1-app/` activates `theme1`.
 
-> **Need a different strategy?** 11 additional resolvers (user role, tenant, OS preference, localStorage, UI toggle, hostname, remote config, A/B, and more) are available in **[Themiq Pro](https://themiq.io/pro)**.
+> **Need a different strategy?** 11 additional resolvers are available in **[Themiq Pro](https://themiq.io/pro)**.
 
 **Add a new theme:**
 

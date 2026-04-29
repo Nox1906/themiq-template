@@ -75,7 +75,7 @@ A standalone MUI provider used only inside Storybook. It mirrors the structure o
 
 ## How theming works in Storybook
 
-The Storybook theme setup is intentionally **decoupled from the resolver system** (`src/theming/resolvers/`). The resolver reads URLs, roles, OS preferences, etc. — none of which make sense in a story context.
+The Storybook theme setup is intentionally **decoupled from the resolver system** (`src/theming/resolvers/`). Resolvers read runtime context (URLs, etc.) — none of which make sense in a story context.
 
 Instead, `preview.ts` uses `withThemeFromJSXProvider` to present a theme dropdown toolbar. When you pick a theme in the toolbar, `ThemeWrapper` receives the new theme name as a prop, looks it up in `themesByName`, and calls `getTheme(spec)` to rebuild the MUI Theme.
 
