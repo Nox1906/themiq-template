@@ -87,19 +87,11 @@ src/
 │   ├── config.ts             # (deprecated) URL-slug resolver — moved to resolvers/
 │   ├── resolvers/            # Pluggable theme-selection strategies
 │   │   ├── index.ts          # ← EDIT THIS FILE to change the active strategy
-│   │   ├── urlSlug.ts        # Strategy: URL first-path-segment
-│   │   ├── queryParam.ts     # Strategy: ?theme= query parameter
-│   │   ├── userRole.ts       # Strategy: authenticated user role
-│   │   ├── tenant.ts         # Strategy: organisation / tenant ID
-│   │   ├── localStorage.ts   # Strategy: saved browser preference
-│   │   ├── uiToggle.tsx      # Strategy: in-app toggle button
-│   │   ├── osPreference.ts   # Strategy: OS prefers-color-scheme
-│   │   ├── hostname.ts       # Strategy: subdomain / hostname
-│   │   ├── remoteConfig.ts   # Strategy: fetch from internal endpoint
-│   │   ├── abExperiment.ts   # Strategy: SDK-agnostic A/B experiment
-│   │   ├── propInjection.ts  # Strategy: host context / Storybook
-│   │   ├── composed.ts       # Strategy: priority-chain of optional resolvers
+│   │   ├── urlSlug.ts        # Strategy: URL first-path-segment (included)
 │   │   └── types.ts          # UseThemeResolver / UseOptionalThemeResolver contracts
+│   │   # 11 additional strategies (queryParam, userRole, tenant, localStorage,
+│   │   # uiToggle, osPreference, hostname, remoteConfig, abExperiment,
+│   │   # propInjection, composed) — available in Themiq Pro
 │   ├── themes/               # Theme implementations
 │   │   ├── spec/             # TypeScript contracts (ThemeSpec and sub-types)
 │   │   ├── theme1/           # Theme 1 implementation
@@ -141,17 +133,11 @@ See [`src/theming/README.md`](src/theming/README.md) for the complete guide.
 
 **Quick start — change the active strategy:**
 
-Open `src/theming/resolvers/index.ts` and swap the import + factory call. That is the only file that needs to change. Example:
+Open `src/theming/resolvers/index.ts` and swap the import + factory call. That is the only file that needs to change.
 
-```ts
-// Switch from URL slug to OS dark mode preference
-import { createOsPreferenceResolver } from "./osPreference";
+This template includes the **URL slug** resolver. It selects a theme from the first URL path segment — e.g. `/theme1-app/` activates `theme1`.
 
-export const useThemeResolver = createOsPreferenceResolver({
-  light: "theme1",
-  dark: "theme2",
-});
-```
+> **Need a different strategy?** 11 additional resolvers (user role, tenant, OS preference, localStorage, UI toggle, hostname, remote config, A/B, and more) are available in **[Themiq Pro](https://themiq.io/pro)**.
 
 **Add a new theme:**
 
@@ -199,9 +185,9 @@ Configured in both `tsconfig.app.json` (for TypeScript) and `vite.config.ts` (fo
 
 ---
 
-## Live demo (`showcase` branch)
+## Live demo
 
-The `showcase` branch extends `main` with a full working demo. Run `npm run dev` and open the URLs below to see the two themes side-by-side:
+This template includes two fully styled themes and a demo page. Run `npm run dev` and open the URLs below to see them side-by-side:
 
 | URL                                 | Theme                                                |
 | ----------------------------------- | ---------------------------------------------------- |

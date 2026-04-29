@@ -19,85 +19,33 @@
  *
  * ## Available strategies
  *
- * | Strategy        | Module              | Best for                                |
- * |-----------------|---------------------|-----------------------------------------|
- * | URL slug ✓      | `./urlSlug`         | Multi-app platform (current)            |
- * | Query parameter | `./queryParam`      | QA / staging preview links              |
- * | User role       | `./userRole`        | RBAC — different skins per role         |
- * | Tenant / org    | `./tenant`          | White-labelling per customer org        |
- * | localStorage    | `./localStorage`    | Restore saved preference on page load   |
- * | UI toggle       | `./uiToggle`        | Runtime toggle / theme-picker button    |
- * | OS preference   | `./osPreference`    | Auto dark mode via prefers-color-scheme |
- * | Hostname        | `./hostname`        | Multi-tenant / custom-domain theming    |
- * | Remote config   | `./remoteConfig`    | Ops-controlled rollout                  |
- * | A/B experiment  | `./abExperiment`    | Per-user cohort assignment via any SDK  |
- * | Prop injection  | `./propInjection`   | Micro-frontend shell / Storybook        |
- * | Composed chain  | `./composed`        | Priority fallback across strategies     |
+ * | Strategy        | Availability    | Best for                                |
+ * |-----------------|-----------------|------------------------------------------|
+ * | URL slug ✓      | This template   | Multi-app platform (current)             |
+ * | Query parameter | Themiq Pro      | QA / staging preview links               |
+ * | User role       | Themiq Pro      | RBAC — different skins per role          |
+ * | Tenant / org    | Themiq Pro      | White-labelling per customer org         |
+ * | localStorage    | Themiq Pro      | Restore saved preference on page load    |
+ * | UI toggle       | Themiq Pro      | Runtime toggle / theme-picker button     |
+ * | OS preference   | Themiq Pro      | Auto dark mode via prefers-color-scheme  |
+ * | Hostname        | Themiq Pro      | Multi-tenant / custom-domain theming     |
+ * | Remote config   | Themiq Pro      | Ops-controlled rollout                   |
+ * | A/B experiment  | Themiq Pro      | Per-user cohort assignment via any SDK   |
+ * | Prop injection  | Themiq Pro      | Micro-frontend shell / Storybook         |
+ * | Composed chain  | Themiq Pro      | Priority fallback across strategies      |
  *
- * ## Examples
- *
- * ### Switch to OS dark mode
- * ```ts
- * import { createOsPreferenceResolver } from './osPreference';
- *
- * export const useThemeResolver = createOsPreferenceResolver({
- *   light: 'theme1',
- *   dark:  'theme2',
- * });
- * ```
- *
- * ### Switch to user-role-based theming
- * ```ts
- * import { createUserRoleResolver } from './userRole';
- * import { useAuthRole } from '../auth/useAuthRole';  // your own auth hook
- *
- * export const useThemeResolver = createUserRoleResolver({
- *   useRole: useAuthRole,
- *   roleMapping: { admin: 'theme2', user: 'theme1' },
- *   fallback: 'theme1',
- * });
- * ```
- *
- * ### Switch to UI toggle (requires a provider above PlatformTheme)
- * ```ts
- * // resolvers/index.ts
- * import { createUiToggleResolver } from './uiToggle';
- * export const useThemeResolver = createUiToggleResolver();
- *
- * // main.tsx — wrap PlatformTheme with the provider
- * import { ThemeControlProvider } from './theming/resolvers/uiToggle';
- * <ThemeControlProvider defaultTheme="theme1">
- *   <PlatformTheme>...</PlatformTheme>
- * </ThemeControlProvider>
- * ```
- *
- * ### Switch to remote config / A/B testing
- * ```ts
- * import { createRemoteConfigResolver } from './remoteConfig';
- *
- * export const useThemeResolver = createRemoteConfigResolver({
- *   endpoint: '/api/theme-config',  // MUST be a trusted internal URL
- *   fallback: 'theme1',
- * });
- * ```
+ * The 11 Pro strategies are available in the Themiq Pro package.
+ * See https://themiq.io/pro or contact hello@themiq.io
  */
 
 // ─── Active resolver ─────────────────────────────────────────────────────────
 // Change THIS import to switch strategies. Uncomment the one you want and
 // remove or comment out the current one.
 
+// Pro resolver strategies (queryParam, userRole, tenant, localStorage, uiToggle,
+// osPreference, hostname, remoteConfig, abExperiment, propInjection, composed)
+// are available in Themiq Pro — https://themiq.io/pro
 import { createUrlSlugResolver } from "./urlSlug";
-// import { createQueryParamResolver }    from './queryParam';
-// import { createUserRoleResolver }      from './userRole';
-// import { createTenantResolver }        from './tenant';
-// import { createLocalStorageResolver }  from './localStorage';
-// import { createUiToggleResolver }      from './uiToggle';
-// import { createOsPreferenceResolver }  from './osPreference';
-// import { createHostnameResolver }      from './hostname';
-// import { createRemoteConfigResolver }  from './remoteConfig';
-// import { createAbExperimentResolver }  from './abExperiment';
-// import { createPropInjectionResolver } from './propInjection';
-// import { createComposedResolver }      from './composed';
 
 // ─── Resolver configuration ───────────────────────────────────────────────────
 // Change THIS call (and the object below) to configure the active strategy.

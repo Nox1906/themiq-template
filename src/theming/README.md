@@ -44,59 +44,32 @@ MUI ThemeProvider           ← provides the compiled Theme to the whole tree
 // Current: URL slug
 import { createUrlSlugResolver } from './urlSlug';
 export const useThemeResolver = createUrlSlugResolver({ ... });
-
-// Switch to: OS dark mode
-import { createOsPreferenceResolver } from './osPreference';
-export const useThemeResolver = createOsPreferenceResolver({
-  light: 'theme1',
-  dark:  'theme2',
-});
 ```
 
 No other file needs to change.
 
-> **Exception:** the `uiToggle` strategy requires a `<ThemeControlProvider>` rendered above `<PlatformTheme>` in `main.tsx`. See [`resolvers/uiToggle.tsx`](resolvers/uiToggle.tsx) for setup instructions.
+> **Themiq Pro:** Need a different selection strategy (user role, tenant ID, localStorage, OS preference, UI toggle, hostname, remote config, A/B, or a composed chain)? The full set of 11 additional resolver strategies is available in **[Themiq Pro](https://themiq.io/pro)**.
 
 ---
 
 ## Available resolver strategies
 
-| File                                             | Strategy                             | Reactive?            | Best for                   |
-| ------------------------------------------------ | ------------------------------------ | -------------------- | -------------------------- |
-| [`urlSlug.ts`](resolvers/urlSlug.ts)             | First URL path segment (`/:appSlug`) | No (module load)     | Multi-app platform         |
-| [`queryParam.ts`](resolvers/queryParam.ts)       | `?theme=` URL query parameter        | Yes                  | QA / staging preview       |
-| [`userRole.ts`](resolvers/userRole.ts)           | Authenticated user role              | On re-login          | RBAC skins                 |
-| [`tenant.ts`](resolvers/tenant.ts)               | Organisation / tenant ID             | On re-login          | White-labelling            |
-| [`localStorage.ts`](resolvers/localStorage.ts)   | Saved browser preference             | On mount             | Restore user choice        |
-| [`uiToggle.tsx`](resolvers/uiToggle.tsx)         | In-app toggle button                 | Yes (instant)        | Theme-picker UI            |
-| [`osPreference.ts`](resolvers/osPreference.ts)   | OS `prefers-color-scheme`            | Yes (OS change)      | Auto dark mode             |
-| [`hostname.ts`](resolvers/hostname.ts)           | `window.location.hostname`           | No (module load)     | Custom-domain tenants      |
-| [`remoteConfig.ts`](resolvers/remoteConfig.ts)   | Fetch from internal endpoint         | On mount (async)     | Ops-controlled rollout     |
-| [`abExperiment.ts`](resolvers/abExperiment.ts)   | Any async SDK function               | On mount (async)     | A/B experimentation        |
-| [`propInjection.ts`](resolvers/propInjection.ts) | `ThemeNameContext` from host         | Yes (context change) | Micro-frontend / Storybook |
-| [`composed.ts`](resolvers/composed.ts)           | Priority chain of optional resolvers | Depends on steps     | Mixed strategies           |
+| Strategy                             | Availability  | Reactive?        | Best for                   |
+| ------------------------------------ | ------------- | ---------------- | -------------------------- |
+| URL slug (`/:appSlug`)               | **Template**  | No (module load) | Multi-app platform         |
+| `?theme=` query parameter            | Themiq Pro    | Yes              | QA / staging preview       |
+| Authenticated user role              | Themiq Pro    | On re-login      | RBAC skins                 |
+| Organisation / tenant ID             | Themiq Pro    | On re-login      | White-labelling            |
+| Saved browser preference             | Themiq Pro    | On mount         | Restore user choice        |
+| In-app toggle button                 | Themiq Pro    | Yes (instant)    | Theme-picker UI            |
+| OS `prefers-color-scheme`            | Themiq Pro    | Yes (OS change)  | Auto dark mode             |
+| `window.location.hostname`           | Themiq Pro    | No (module load) | Custom-domain tenants      |
+| Fetch from internal endpoint         | Themiq Pro    | On mount (async) | Ops-controlled rollout     |
+| Any async SDK function               | Themiq Pro    | On mount (async) | A/B experimentation        |
+| `ThemeNameContext` from host         | Themiq Pro    | Yes              | Micro-frontend / Storybook |
+| Priority chain of optional resolvers | Themiq Pro    | Depends on steps | Mixed strategies           |
 
-### Composed (priority chain) example
-
-```ts
-import { createComposedResolver } from "./composed";
-import { createOptionalPropInjectionResolver } from "./propInjection";
-import { createOptionalQueryParamResolver } from "./queryParam";
-import { createOptionalTenantResolver } from "./tenant";
-import { useOrgId } from "../auth/useOrgId";
-
-export const useThemeResolver = createComposedResolver(
-  [
-    createOptionalPropInjectionResolver(), // highest priority
-    createOptionalQueryParamResolver({ paramName: "theme" }),
-    createOptionalTenantResolver({
-      useTenant: useOrgId,
-      tenantMapping: { "org-abc": "theme1", "org-xyz": "theme2" },
-    }),
-  ],
-  { fallback: "theme1" },
-);
-```
+The 11 Pro strategies ship as fully-typed, production-ready modules in **[Themiq Pro](https://themiq.io/pro)**.
 
 ---
 
@@ -155,18 +128,8 @@ src/theming/
 ├── resolvers/                 # Pluggable theme-selection strategies
 │   ├── index.ts               # ← THE ONLY FILE YOU EDIT to switch strategy
 │   ├── types.ts               # UseThemeResolver / UseOptionalThemeResolver
-│   ├── urlSlug.ts
-│   ├── queryParam.ts
-│   ├── userRole.ts
-│   ├── tenant.ts
-│   ├── localStorage.ts
-│   ├── uiToggle.tsx           # .tsx because it contains JSX (ThemeControlProvider)
-│   ├── osPreference.ts
-│   ├── hostname.ts
-│   ├── remoteConfig.ts
-│   ├── abExperiment.ts
-│   ├── propInjection.ts
-│   └── composed.ts
+│   └── urlSlug.ts             # URL first-path-segment strategy (included)
+│   # 11 additional strategies available in Themiq Pro — https://themiq.io/pro
 │
 ├── themes/
 │   ├── index.ts               # Re-exports all theme objects
