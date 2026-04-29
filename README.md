@@ -194,6 +194,14 @@ This template includes two fully styled themes and a demo page. Run `npm run dev
 
 A **Switch Theme** button is embedded in the demo page for one-click comparison.
 
+**Demo page — live theme switch:**
+
+![Demo page theme switch](./docs/demo-theme-switch.gif)
+
+**Storybook — theme switcher in action:**
+
+![Storybook theme switch](./docs/storybook-theme-switch.gif)
+
 ### What makes the themes visually distinct
 
 | Token                           | Theme 1 (Professional) | Theme 2 (Friendly)      |
