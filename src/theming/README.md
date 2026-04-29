@@ -12,7 +12,6 @@ The theming system selects and applies an MUI `Theme` at the root of the React t
 
 - [How it works](#how-it-works)
 - [Changing the active strategy](#changing-the-active-strategy)
-- [Available resolver strategies](#available-resolver-strategies)
 - [Adding a new theme](#adding-a-new-theme)
 - [Folder structure](#folder-structure)
 - [ThemeSpec contract](#themespec-contract)
@@ -48,28 +47,7 @@ export const useThemeResolver = createUrlSlugResolver({ ... });
 
 No other file needs to change.
 
-> **Themiq Pro:** Need a different selection strategy (user role, tenant ID, localStorage, OS preference, UI toggle, hostname, remote config, A/B, or a composed chain)? The full set of 11 additional resolver strategies is available in **[Themiq Pro](https://themiq.io/pro)**.
-
----
-
-## Available resolver strategies
-
-| Strategy                             | Availability  | Reactive?        | Best for                   |
-| ------------------------------------ | ------------- | ---------------- | -------------------------- |
-| URL slug (`/:appSlug`)               | **Template**  | No (module load) | Multi-app platform         |
-| `?theme=` query parameter            | Themiq Pro    | Yes              | QA / staging preview       |
-| Authenticated user role              | Themiq Pro    | On re-login      | RBAC skins                 |
-| Organisation / tenant ID             | Themiq Pro    | On re-login      | White-labelling            |
-| Saved browser preference             | Themiq Pro    | On mount         | Restore user choice        |
-| In-app toggle button                 | Themiq Pro    | Yes (instant)    | Theme-picker UI            |
-| OS `prefers-color-scheme`            | Themiq Pro    | Yes (OS change)  | Auto dark mode             |
-| `window.location.hostname`           | Themiq Pro    | No (module load) | Custom-domain tenants      |
-| Fetch from internal endpoint         | Themiq Pro    | On mount (async) | Ops-controlled rollout     |
-| Any async SDK function               | Themiq Pro    | On mount (async) | A/B experimentation        |
-| `ThemeNameContext` from host         | Themiq Pro    | Yes              | Micro-frontend / Storybook |
-| Priority chain of optional resolvers | Themiq Pro    | Depends on steps | Mixed strategies           |
-
-The 11 Pro strategies ship as fully-typed, production-ready modules in **[Themiq Pro](https://themiq.io/pro)**.
+> **Themiq Pro:** Need a different selection strategy? More resolver types are available in **[Themiq Pro](https://themiq.io/pro)**.
 
 ---
 
