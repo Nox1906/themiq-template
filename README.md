@@ -183,6 +183,46 @@ import { Button, Typography, Alert, createStyles } from "@/design-system";
 
 All components, form parts, and styling utilities are exported from the single barrel at `src/design-system/index.ts`.
 
+**Component anatomy:**
+
+Every component follows the same two-file pattern:
+
+```mermaid
+flowchart LR
+    S["ComponentName.styles.ts\ncreatStyles\(\(theme\) => \({ … }\)\)\nreads theme tokens"] -->|"makeStyles hook"| C
+    C["ComponentName.tsx\nforwardRef wrapper\nuseStyles + cx merging"] -->|"renders"| M["MUI base component\nwith scoped Emotion classes"]
+    T["MUI ThemeProvider\nactive theme tokens"] -->|"injected into"| S
+
+    style S fill:#fff8e1,stroke:#f57f17,stroke-width:2px
+    style C fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style M fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style T fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
+
+**Adding a component:**
+
+```
+src/design-system/<Category>/<ComponentName>/
+  ├── ComponentName.tsx         ← forwardRef wrapper + Props type
+  ├── ComponentName.styles.ts   ← createStyles((theme) => ({ … }))
+  └── index.ts                  ← re-export default
+```
+
+Style tokens always come from the theme — never use raw hex strings or hardcoded pixel values:
+
+```ts
+// ComponentName.styles.ts
+import { createStyles } from "../../utils";
+
+export default createStyles((theme) => ({
+  root: {
+    color: theme.palette.primary.main,       // ← from ThemeSpec palette
+    borderRadius: theme.shape.sm,            // ← from ThemeSpec shape
+    fontSize: theme.typography.body1.fontSize, // ← from ThemeSpec typography
+  },
+}));
+```
+
 ---
 
 ## Path aliases
