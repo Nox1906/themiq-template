@@ -112,13 +112,21 @@ src/
 
 ## Architecture overview
 
-```
-main.tsx
-  └── BrowserRouter
-        └── App.tsx
-              └── PlatformTheme          ← resolves theme name via resolver hook
-                    └── MUI ThemeProvider (active MUI Theme object)
-                          └── Routes / pages
+```mermaid
+flowchart TD
+    A["main.tsx\nStrictMode · BrowserRouter"] --> B["App.tsx\ndefines Routes"]
+    B --> C["PlatformTheme.tsx\nroot theming provider"]
+    C --> D["useThemeResolver()\nresolvers/index.ts"]
+    D --> E["URL Slug resolver\nfirst path segment → theme name"]
+    E --> F["themes/index.ts\nthemesByName lookup"]
+    F --> G["ThemeSpec\npalette · typography · shape · shadows"]
+    G --> H["getTheme(spec)\nMUI createTheme()"]
+    H --> I["MUI ThemeProvider"]
+    I --> J["Routes → Pages\ndesign-system components"]
+
+    style C fill:#e8f4fd,stroke:#2196f3,stroke-width:2px
+    style D fill:#e8f4fd,stroke:#2196f3,stroke-width:2px
+    style E fill:#e8f4fd,stroke:#2196f3,stroke-width:2px
 ```
 
 The theme is resolved by a **resolver hook** (`src/theming/resolvers/index.ts`). The resolver is swappable without touching any other file — see [Theming system](#theming-system).
