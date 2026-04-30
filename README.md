@@ -1,6 +1,6 @@
 # Themiq
 
-A multi-theme React platform built with MUI, Vite, and TypeScript. The theme is selected at runtime via a pluggable resolver system — the same codebase serves multiple applications, each with its own visual identity.
+A production-ready React + MUI platform with a type-safe theming architecture. Use it as a **solid single-theme foundation** with consistent design tokens and 57 themed components — or scale it to **any number of brands** without touching a single component. The active theme is resolved at runtime via a pluggable resolver system.
 
 ---
 
@@ -23,15 +23,17 @@ A multi-theme React platform built with MUI, Vite, and TypeScript. The theme is 
 
 |                               | Without Themiq                                   | With Themiq                                                   |
 | ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
-| **New brand**                 | Duplicate codebase, edit every component         | Add a theme folder, export, register one resolver mapping     |
+| **Start with one theme**      | Scattered hex strings, no contract               | Type-safe `ThemeSpec` — one file to change any token          |
+| **Scale to multiple brands**  | Duplicate codebase per brand                     | Add a theme folder, register one resolver mapping             |
 | **Change primary color**      | grep-replace across all files                    | Edit one value in `palette.ts`                                |
 | **Switch selection strategy** | Rewrite app entrypoint logic                     | Change one import in `resolvers/index.ts`                     |
 | **Type safety**               | None — raw strings and magic hex codes           | Full — `ThemeSpec` contract enforced at compile time          |
-| **Component code**            | `sx={{ color: '#007AFF' }}` hard-coded per brand | `sx={{ color: theme.palette.primary.main }}` — brand-agnostic |
-| **Maintenance cost**          | Grows linearly with number of brands             | Flat — adding brand N costs the same as adding brand 2        |
+| **Component code**            | `sx={{ color: '#007AFF' }}` hard-coded           | `sx={{ color: theme.palette.primary.main }}` — always correct |
+| **Maintenance cost**          | Grows with every brand or color change           | Flat — adding brand N costs the same as adding brand 2        |
 
-> Themiq separates **what the theme looks like** (`ThemeSpec`) from **how it gets selected** (resolver) from **how it gets applied** (components reading tokens).
-> Each concern changes independently. Swap a resolver without touching themes. Add a theme without touching components.
+> Themiq works with one brand today and is ready for ten tomorrow — without any refactoring.
+>
+> It separates **what the theme looks like** (`ThemeSpec`) from **how it gets selected** (resolver) from **how it gets applied** (components reading tokens). Each concern changes independently.
 
 ---
 
