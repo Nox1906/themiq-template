@@ -21,14 +21,14 @@ A multi-theme React platform built with MUI, Vite, and TypeScript. The theme is 
 
 ## Why Themiq?
 
-| | Without Themiq | With Themiq |
-|---|---|---|
-| **New brand** | Duplicate codebase, edit every component | Add a theme folder, export, register one resolver mapping |
-| **Change primary color** | grep-replace across all files | Edit one value in `palette.ts` |
-| **Switch selection strategy** | Rewrite app entrypoint logic | Change one import in `resolvers/index.ts` |
-| **Type safety** | None — raw strings and magic hex codes | Full — `ThemeSpec` contract enforced at compile time |
-| **Component code** | `sx={{ color: '#007AFF' }}` hard-coded per brand | `sx={{ color: theme.palette.primary.main }}` — brand-agnostic |
-| **Maintenance cost** | Grows linearly with number of brands | Flat — adding brand N costs the same as adding brand 2 |
+|                               | Without Themiq                                   | With Themiq                                                   |
+| ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
+| **New brand**                 | Duplicate codebase, edit every component         | Add a theme folder, export, register one resolver mapping     |
+| **Change primary color**      | grep-replace across all files                    | Edit one value in `palette.ts`                                |
+| **Switch selection strategy** | Rewrite app entrypoint logic                     | Change one import in `resolvers/index.ts`                     |
+| **Type safety**               | None — raw strings and magic hex codes           | Full — `ThemeSpec` contract enforced at compile time          |
+| **Component code**            | `sx={{ color: '#007AFF' }}` hard-coded per brand | `sx={{ color: theme.palette.primary.main }}` — brand-agnostic |
+| **Maintenance cost**          | Grows linearly with number of brands             | Flat — adding brand N costs the same as adding brand 2        |
 
 > Themiq separates **what the theme looks like** (`ThemeSpec`) from **how it gets selected** (resolver) from **how it gets applied** (components reading tokens).
 > Each concern changes independently. Swap a resolver without touching themes. Add a theme without touching components.
