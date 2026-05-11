@@ -119,13 +119,13 @@ Styles live in a dedicated `ComponentName.styles.ts` file alongside the componen
 import { createStyles } from "@/design-system/utils";
 
 export default createStyles({
-  THEME1: (theme) => ({
+  NOVAPAY: (theme) => ({
     root: {
       background: theme.palette.primary.main,
       borderRadius: theme.shape.sm,
     },
   }),
-  THEME2: (theme) => ({
+  CANVARA: (theme) => ({
     root: {
       background: theme.palette.secondary.main,
       borderRadius: theme.shape.md,
@@ -150,10 +150,10 @@ function Button({ className }) {
 ```ts
 // Typography.styles.ts
 export default createStyles<never, { maxLines?: number }>({
-  THEME1: (_, { maxLines }) => ({
+  NOVAPAY: (_, { maxLines }) => ({
     root: { WebkitLineClamp: maxLines },
   }),
-  THEME2: (_, { maxLines }) => ({
+  CANVARA: (_, { maxLines }) => ({
     root: { WebkitLineClamp: maxLines },
   }),
 });
@@ -175,12 +175,12 @@ export default createStyles((theme) => ({
 ```ts
 // Component.styles.ts
 export default createStyles(["accentColor"], {
-  THEME1: (theme, _, __, cssVars) => ({
+  NOVAPAY: (theme, _, __, cssVars) => ({
     root: {
       color: cssVars("accentColor").value(theme.palette.primary.main),
     },
   }),
-  THEME2: (theme, _, __, cssVars) => ({
+  CANVARA: (theme, _, __, cssVars) => ({
     root: {
       color: cssVars("accentColor").value(theme.palette.secondary.main),
     },
@@ -215,16 +215,16 @@ Use when the two themes require **structurally different CSS** — different lay
 
 ```ts
 export default createStyles({
-  THEME1: (theme) => ({
+  NOVAPAY: (theme) => ({
     root: {
-      display: "flex", // flex layout in theme1
+      display: "flex", // flex layout in novapay
       gap: theme.spacing(1),
       background: theme.palette.primary.main,
     },
   }),
-  THEME2: (theme) => ({
+  CANVARA: (theme) => ({
     root: {
-      display: "grid", // grid layout in theme2
+      display: "grid", // grid layout in canvara
       gridTemplateColumns: "1fr 1fr",
       background: theme.palette.secondary.main,
     },
@@ -255,14 +255,14 @@ const base = (theme: Theme) => ({
 });
 
 export default createStyles({
-  THEME1: (theme) => ({
+  NOVAPAY: (theme) => ({
     ...base(theme),
     root: {
       ...base(theme).root,
       background: theme.palette.primary.main, // only the difference
     },
   }),
-  THEME2: (theme) => ({
+  CANVARA: (theme) => ({
     ...base(theme),
     root: {
       ...base(theme).root,
@@ -289,8 +289,8 @@ export default createStyles((theme) => ({
   root: {
     display: "flex",
     gap: theme.spacing(1),
-    background: theme.palette.primary.main, // theme1 → blue, theme2 → purple
-    borderRadius: theme.shape.sm, // theme1 → 4px,  theme2 → 8px
+    background: theme.palette.primary.main, // novapay → blue, canvara → purple
+    borderRadius: theme.shape.sm, // novapay → 4px,  canvara → 8px
   },
 }));
 ```
@@ -299,7 +299,7 @@ Because each theme provides its own token values, the rendered CSS differs per t
 
 **Pros:** Zero repetition. Layout/structural changes touch exactly one place. Scales to any number of themes automatically.
 
-**Cons:** Only works when both themes use the same CSS structure. If THEME2 ever needs a genuinely different layout, you must migrate to Mode 1 or Mode 2 at that point.
+**Cons:** Only works when both themes use the same CSS structure. If CANVARA ever needs a genuinely different layout, you must migrate to Mode 1 or Mode 2 at that point.
 
 **Dynamic props work the same way:**
 
@@ -355,7 +355,7 @@ export default createStyles<never, { maxLines?: number }>(
 
    The top-level `src/design-system/index.ts` uses `export *` from every category, so it picks up the new export automatically.
 
-4. **Styles** — use `createStyles` with keys matching every registered design system (`THEME1`, `THEME2`, …). TypeScript will error if a design system is missing.
+4. **Styles** — use `createStyles` with keys matching every registered design system (`NOVAPAY`, `CANVARA`, …). TypeScript will error if a design system is missing.
 
    > When a new design system is added to the platform, you must also add its uppercase key to the `designSystems` guard in `src/design-system/utils/createStyles.ts` — TypeScript will signal this with a compile error.
 

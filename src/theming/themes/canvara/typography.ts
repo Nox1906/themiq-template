@@ -1,15 +1,15 @@
 import type { ThemeSpecTypography } from "../spec/typography";
 
 /**
- * Theme2 typography scale.
+ * Canvara typography scale.
  *
  * Sizes are in `rem`, computed relative to {@link htmlFontSize} (12 px).
  * Use `pixelsToRem(n)` to convert a design-spec pixel value to the correct
  * rem string — all `rem` values in MUI are relative to `htmlFontSize`, not
  * the browser's 16 px default.
  *
- * Theme2 uses **Inter** as its primary font, distinguishing it from
- * Theme1 which uses Helvetica/Arial. Make sure Inter is loaded in the
+ * Canvara uses **Inter** as its primary font, distinguishing it from
+ * Novapay which uses Helvetica/Arial. Make sure Inter is loaded in the
  * app shell (via `@font-face`, Google Fonts, or a local asset).
  *
  * ### Changing the font family

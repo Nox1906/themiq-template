@@ -56,7 +56,7 @@ export type IntegrationEngineThemeName = IntegrationEngineTheme["name"];
 
 declare module "@mui/material/styles" {
   interface Theme {
-    /** The active theme's identifier string (e.g. `"theme1"`). */
+    /** The active theme's identifier string (e.g. `"novapay"`). */
     name: IntegrationEngineThemeName;
     /**
      * The design system implemented by this theme.
@@ -74,10 +74,10 @@ declare module "@mui/material/styles" {
    * @example
    * ```ts
    * import { createTheme } from "@mui/material/styles";
-   * import { Theme1 } from "src/theming/themes";
+   * import { Novapay } from "src/theming/themes";
    * import { getTheme } from "src/theming/utils";
    *
-   * const muiTheme = createTheme(getTheme(Theme1));
+   * const muiTheme = createTheme(getTheme(Novapay));
    * ```
    */
   function createTheme(options?: MuiThemeOptions, ...args: object[]): Theme;

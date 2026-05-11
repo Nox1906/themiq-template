@@ -19,21 +19,21 @@ import {
 } from "../design-system";
 
 const themeConfig = {
-  theme1: {
+  novapay: {
     brand: "Acme Enterprise",
     tagline: "Enterprise management platform",
-    slug: "theme1-app",
+    slug: "novapay-app",
     switchLabel: "Switch to Friendly Co. (Theme 2)",
-    switchSlug: "theme2-app",
+    switchSlug: "canvara-app",
     description:
       "A clean, professional workspace for enterprise teams. Teal palette, sharp corners, and dense typography optimised for data-heavy workflows.",
   },
-  theme2: {
+  canvara: {
     brand: "Friendly Co.",
     tagline: "Your creative workspace",
-    slug: "theme2-app",
+    slug: "canvara-app",
     switchLabel: "Switch to Acme Enterprise (Theme 1)",
-    switchSlug: "theme1-app",
+    switchSlug: "novapay-app",
     description:
       "A warm, approachable product for creative teams. Purple palette, rounded corners, and expressive typography built for engagement.",
   },
@@ -42,7 +42,7 @@ const themeConfig = {
 export default function DemoPage() {
   const [tab, setTab] = useState(0);
   const theme = useTheme();
-  const cfg = themeConfig[theme.name] ?? themeConfig.theme1;
+  const cfg = themeConfig[theme.name] ?? themeConfig.novapay;
 
   return (
     <Box

@@ -28,7 +28,7 @@ import type { ThemeSpec } from "../themes/spec";
  * export function createMyResolver(config: MyConfig): UseThemeResolver {
  *   return function useThemeResolver(): ThemeSpec['name'] {
  *     // your logic, may call React hooks
- *     return 'theme1';
+ *     return 'novapay';
  *   };
  * }
  * ```

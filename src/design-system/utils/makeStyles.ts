@@ -120,8 +120,8 @@ type CleanParams<Params> = [Params] extends [never]
  * ```ts
  * // Component.styles.ts
  * export default createStyles({
- *   THEME1: (theme) => ({ root: { color: theme.palette.primary.main } }),
- *   THEME2: (theme) => ({ root: { color: theme.palette.secondary.main } }),
+ *   NOVAPAY: (theme) => ({ root: { color: theme.palette.primary.main } }),
+ *   CANVARA: (theme) => ({ root: { color: theme.palette.secondary.main } }),
  * });
  *
  * // Component.tsx
@@ -138,8 +138,8 @@ type CleanParams<Params> = [Params] extends [never]
  * ```ts
  * // Component.styles.ts
  * export default createStyles<never, { size: number }>({
- *   THEME1: (_, { size }) => ({ root: { width: size } }),
- *   THEME2: (_, { size }) => ({ root: { width: size } }),
+ *   NOVAPAY: (_, { size }) => ({ root: { width: size } }),
+ *   CANVARA: (_, { size }) => ({ root: { width: size } }),
  * });
  *
  * // Component.tsx
@@ -150,7 +150,7 @@ type CleanParams<Params> = [Params] extends [never]
  * ```ts
  * // Component.styles.ts
  * export default createStyles(['color'], {
- *   THEME1: (theme, _, __, cssVars) => ({
+ *   NOVAPAY: (theme, _, __, cssVars) => ({
  *     root: { color: cssVars('color').value(theme.palette.primary.main) },
  *   }),
  * });

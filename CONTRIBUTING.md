@@ -51,7 +51,7 @@ npm run storybook
    └── zIndex.ts       ← stacking order
    ```
 
-   Use `src/theming/themes/theme1/` as the reference implementation.
+   Use `src/theming/themes/novapay/` as the reference implementation.
 
 2. **Export it** from `src/theming/themes/index.ts`:
 
@@ -62,16 +62,16 @@ npm run storybook
 3. **Register the name** in `src/theming/themes/spec/index.ts`:
 
    ```ts
-   name: "theme1" | "theme2" | "my-theme";
-   designSystem: "theme1" | "theme2" | "my-theme";
+   name: "novapay" | "canvara" | "my-theme";
+   designSystem: "novapay" | "canvara" | "my-theme";
    ```
 
 4. **Register it in the resolver** (`src/theming/resolvers/index.ts`):
 
    ```ts
    slugMapping: {
-     "theme1-app": "theme1",
-     "theme2-app": "theme2",
+     "novapay-app": "novapay",
+     "canvara-app": "canvara",
      "my-app":     "my-theme",
    }
    ```

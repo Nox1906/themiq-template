@@ -2,19 +2,22 @@ import primitives from "../primitives";
 import type { ThemeSpecPalette } from "../spec/palette";
 
 /**
- * Theme1 color palette.
+ * Canvara color palette.
  *
  * Maps design-token primitives (`../primitives`) to the semantic roles
  * defined by {@link ThemeSpecPalette}.
+ *
+ * Friendly/consumer-oriented palette — purple primary, plum secondary.
+ * Designed to feel creative and approachable (Canva / Figma style).
  *
  * ### Changing a color
  * Replace the primitive reference with another entry from `primitives.ts`
  * or a raw hex string:
  * ```ts
  * primary: {
- *   main: primitives.teal[500],  // ← swap brand color
- *   light: primitives.teal[50],
- *   dark: primitives.teal[700],
+ *   main: primitives.purple[500],  // ← swap brand color
+ *   light: primitives.purple[50],
+ *   dark: primitives.purple[700],
  *   contrastText: primitives.white,
  * },
  * ```
@@ -24,47 +27,42 @@ import type { ThemeSpecPalette } from "../spec/palette";
  * scale keys are populated. Add them as needed:
  * ```ts
  * primary: {
- *   main:  primitives.blue[500],
- *   light: primitives.blue[50],
- *   dark:  primitives.blue[700],
+ *   main:  primitives.purple[500],
+ *   light: primitives.purple[50],
+ *   dark:  primitives.purple[700],
  *   contrastText: primitives.white,
  *   // — optional scale keys —
- *   "0":   primitives.blue[0],    // very light background wash
- *   "100": primitives.blue[100],  // border / tag fill
- *   "300": primitives.blue[300],  // secondary icon color
- *   "700": primitives.blue[700],  // dark hover
- *   "900": primitives.blue[900],  // near-black text
+ *   "0":   primitives.purple[0],
+ *   "100": primitives.purple[100],
+ *   "300": primitives.purple[300],
+ *   "700": primitives.purple[700],
+ *   "900": primitives.purple[900],
  * },
- * ```
- *
- * ### Changing the default page background
- * ```ts
- * background: { default: primitives.stone[0] },
  * ```
  */
 const palette: ThemeSpecPalette = {
   /**
-   * Primary — teal family.
-   * Clean, trusted enterprise colour — used by Salesforce, Asana, and
-   * other professional SaaS products. Pairs with a neutral-grey secondary.
+   * Primary — purple family.
+   * Creative, approachable, modern — used by Canva, Figma, and
+   * consumer-facing products that want to feel energetic and friendly.
    */
   primary: {
-    main: primitives.teal[500],
-    light: primitives.teal[50],
-    dark: primitives.teal[700],
+    main: primitives.purple[500],
+    light: primitives.purple[50],
+    dark: primitives.purple[700],
     contrastText: primitives.white,
-    "0": primitives.teal[0],
-    "100": primitives.teal[100],
-    "300": primitives.teal[300],
-    "700": primitives.teal[700],
-    "900": primitives.teal[900],
+    "0": primitives.purple[0],
+    "100": primitives.purple[100],
+    "300": primitives.purple[300],
+    "700": primitives.purple[700],
+    "900": primitives.purple[900],
   },
 
-  /** Secondary — stone (cool grey) family. */
+  /** Secondary — plum (warm magenta) family. Adds warmth alongside the purple primary. */
   secondary: {
-    main: primitives.stone[500],
-    light: primitives.stone[50],
-    dark: primitives.stone[700],
+    main: primitives.plum[500],
+    light: primitives.plum[50],
+    dark: primitives.plum[700],
     contrastText: primitives.white,
   },
 
@@ -109,11 +107,11 @@ const palette: ThemeSpecPalette = {
     "900": primitives.stone[900],
   },
 
-  /** Neutral dark — deep stone for sidebars and inverted surfaces. */
+  /** Neutral dark — deep brand purple for header/sidebar surfaces in Canvara. */
   "neutral-dark": {
-    main: primitives.stone[700],
-    light: primitives.stone[100],
-    dark: primitives.stone[900],
+    main: primitives.purple[700],
+    light: primitives.purple[100],
+    dark: primitives.purple[900],
     contrastText: primitives.white,
   },
 
@@ -130,9 +128,9 @@ const palette: ThemeSpecPalette = {
     white: primitives.white,
   },
 
-  /** Clean white background — enterprise/professional style (Stripe, Linear). */
+  /** Soft lavender wash — warm, inviting background for a consumer-friendly feel. */
   background: {
-    default: primitives.white,
+    default: primitives.purple[0],
   },
 };
 

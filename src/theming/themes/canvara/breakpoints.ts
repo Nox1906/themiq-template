@@ -1,9 +1,9 @@
 import type { ThemeSpecBreakpoints } from "../spec/breakpoints";
 
 /**
- * Theme2 breakpoint values.
+ * Canvara breakpoint values.
  *
- * Currently identical to Theme1. All values are in pixels (minimum width).
+ * Currently identical to Novapay. All values are in pixels (minimum width).
  * The `xxs` key is a custom extension registered in `types.d.ts`.
  *
  * ### Changing a value

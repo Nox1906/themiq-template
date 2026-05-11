@@ -10,7 +10,7 @@ import type { ThemeSpecZIndex } from "./zIndex";
  *
  * ### Creating a new theme
  * 1. Create a folder under `src/theming/themes/` (e.g. `my-theme/`)
- * 2. Add these files, following the same structure as `theme1/`:
+ * 2. Add these files, following the same structure as `novapay/`:
  *    - `palette.ts`     — semantic color mapping
  *    - `typography.ts`  — font family, sizes, and weights
  *    - `shadows.ts`     — elevation and focus ring shadows
@@ -42,14 +42,14 @@ export type ThemeSpec = {
    * Unique theme identifier string.
    * Add new theme names to this union when registering a new theme.
    */
-  name: "theme1" | "theme2";
+  name: "novapay" | "canvara";
 
   /**
    * The design system this theme implements.
    * Typically the same as `name`. Use a shared value when multiple themes
    * (e.g. light/dark variants) implement the same design system.
    */
-  designSystem: "theme1" | "theme2";
+  designSystem: "novapay" | "canvara";
 
   /** Semantic color palette — maps primitive tokens to semantic roles. */
   palette: ThemeSpecPalette;

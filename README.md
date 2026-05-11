@@ -111,8 +111,8 @@ src/
    │   │   # More resolver types available in Themiq Pro
 │   ├── themes/               # Theme implementations
 │   │   ├── spec/             # TypeScript contracts (ThemeSpec and sub-types)
-│   │   ├── theme1/           # Theme 1 implementation
-│   │   ├── theme2/           # Theme 2 implementation
+│   │   ├── novapay/           # Theme 1 implementation
+│   │   ├── canvara/           # Theme 2 implementation
 │   │   └── types.d.ts        # MUI module augmentation (Shape, BreakpointOverrides)
 │   └── utils.ts/             # getTheme (ThemeSpec → MUI Theme), createShadows
 │
@@ -160,13 +160,13 @@ See [`src/theming/README.md`](src/theming/README.md) for the complete guide.
 
 Open `src/theming/resolvers/index.ts` and swap the import + factory call. That is the only file that needs to change.
 
-This template includes the **URL slug** resolver. It selects a theme from the first URL path segment — e.g. `/theme1-app/` activates `theme1`.
+This template includes the **URL slug** resolver. It selects a theme from the first URL path segment — e.g. `/novapay-app/` activates `novapay`.
 
 > **Need a different strategy?** 11 additional resolvers are available in **[Themiq Pro](https://themiq.io/pro)**.
 
 **Add a new theme:**
 
-1. Create `src/theming/themes/my-theme/` following the same file structure as `theme1/`
+1. Create `src/theming/themes/my-theme/` following the same file structure as `novapay/`
 2. Export it from `src/theming/themes/index.ts`
 3. Add `"my-theme"` to the `name` and `designSystem` unions in `src/theming/themes/spec/index.ts`
 4. Register it in the resolver configuration in `src/theming/resolvers/index.ts`
@@ -256,8 +256,8 @@ This template includes two fully styled themes and a demo page. Run `npm run dev
 
 | URL                                 | Theme                                                |
 | ----------------------------------- | ---------------------------------------------------- |
-| `http://localhost:5173/theme1-app/` | **Theme 1 — Acme Enterprise** (teal, sharp, Inter)   |
-| `http://localhost:5173/theme2-app/` | **Theme 2 — Friendly Co.** (purple, rounded, Nunito) |
+| `http://localhost:5173/novapay-app/` | **Theme 1 — Acme Enterprise** (teal, sharp, Inter)   |
+| `http://localhost:5173/canvara-app/` | **Theme 2 — Friendly Co.** (purple, rounded, Nunito) |
 
 A **Switch Theme** button is embedded in the demo page for one-click comparison.
 
@@ -288,4 +288,4 @@ A **Switch Theme** button is embedded in the demo page for one-click comparison.
 - ✅ Storybook theme switcher fixed (`withThemeFromJSXProvider` typed correctly)
 - ✅ All 23 story files use correct MUI prop values + `meta.args` defaults for instant previews
 - ✅ `DemoPage` is theme-aware: shows brand name, tagline, and description per active theme
-- ✅ Live theme switcher embedded in the demo page (`/theme1-app/` ↔ `/theme2-app/`)
+- ✅ Live theme switcher embedded in the demo page (`/novapay-app/` ↔ `/canvara-app/`)

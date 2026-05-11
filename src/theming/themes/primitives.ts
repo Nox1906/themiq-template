@@ -3,7 +3,7 @@
  *
  * These are **not** meant to be used directly in components.
  * They exist solely to be consumed by theme palette files
- * (e.g. `theme1/palette.ts`) where they are mapped to semantic roles
+ * (e.g. `novapay/palette.ts`) where they are mapped to semantic roles
  * (`primary`, `secondary`, `success`, etc.).
  *
  * ### Scale system

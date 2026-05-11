@@ -1,7 +1,7 @@
 import type { ThemeSpecTypography } from "../spec/typography";
 
 /**
- * Theme1 typography scale.
+ * Novapay typography scale.
  *
  * Sizes are in `rem`, computed relative to {@link htmlFontSize} (12 px).
  * Use `pixelsToRem(n)` to convert a design-spec pixel value to the correct

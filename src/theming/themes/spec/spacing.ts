@@ -84,7 +84,7 @@ export type SpacingScaleValue =
  *
  * @example
  * ```ts
- * // theme1/index.ts
+ * // novapay/index.ts
  * export const spacingScale: ThemeSpecSpacingScale = {
  *   unit: 4,
  *   xs:   4,   // spacing(1)

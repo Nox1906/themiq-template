@@ -36,7 +36,7 @@
  *   MyNewShadow: 14,
  * } as const;
  *
- * // theme1/shadows.ts — add the value at the matching position
+ * // novapay/shadows.ts — add the value at the matching position
  * const shadows = [
  *   ...existingValues,
  *   "0px 0px 12px 0px rgba(0, 0, 0, 0.3)", // 14 - MyNewShadow

@@ -1,9 +1,9 @@
 import type { ThemeSpecShape } from "../spec/shape";
 
 /**
- * Theme2 shape scale.
+ * Canvara shape scale.
  *
- * Currently identical to Theme1. Diverge values here as the Theme2
+ * Currently identical to Novapay. Diverge values here as the Canvara
  * design evolves — for example a more rounded style would increase
  * all steps proportionally.
  *

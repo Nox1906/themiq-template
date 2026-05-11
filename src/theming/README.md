@@ -3,7 +3,7 @@
 The theming system selects and applies an MUI `Theme` at the root of the React tree. It is built around three concepts:
 
 1. **`ThemeSpec`** — a TypeScript contract that every theme must satisfy
-2. **Theme implementations** — concrete objects (`theme1`, `theme2`) that satisfy the contract
+2. **Theme implementations** — concrete objects (`novapay`, `canvara`) that satisfy the contract
 3. **Resolvers** — React hook factories that decide _which_ theme is active at runtime
 
 ---
@@ -53,7 +53,7 @@ No other file needs to change.
 
 ## Adding a new theme
 
-1. **Create the theme folder** — copy `themes/theme1/` to `themes/my-theme/` and edit the values:
+1. **Create the theme folder** — copy `themes/novapay/` to `themes/my-theme/` and edit the values:
 
    ```
    themes/my-theme/
@@ -76,16 +76,16 @@ No other file needs to change.
 3. **Register the name in the `ThemeSpec` union** (`themes/spec/index.ts`):
 
    ```ts
-   name: "theme1" | "theme2" | "my-theme";
-   designSystem: "theme1" | "theme2" | "my-theme";
+   name: "novapay" | "canvara" | "my-theme";
+   designSystem: "novapay" | "canvara" | "my-theme";
    ```
 
 4. **Update `createStyles.ts` design-system guard** (`utils/createStyles.ts`, line ~93):
 
    ```ts
    const designSystems: Record<Uppercase<ThemeSpecDesignSystem>, true> = {
-     THEME1: true,
-     THEME2: true,
+     NOVAPAY: true,
+     CANVARA: true,
      MY_THEME: true, // ← add this
    };
    ```
@@ -122,8 +122,8 @@ src/theming/
 │   │   ├── transitions.ts     # ThemeSpecTransitions (durations + easings)
 │   │   ├── zIndex.ts          # ThemeSpecZIndex (overlay layers)
 │   │   └── spacing.ts         # SpacingScale named multipliers (utility)
-│   ├── theme1/                # Theme 1 implementation (8 files)
-│   └── theme2/                # Theme 2 implementation (8 files)
+│   ├── novapay/                # Theme 1 implementation (8 files)
+│   └── canvara/                # Theme 2 implementation (8 files)
 │
 └── utils.ts/
     ├── index.ts               # Re-exports getTheme
@@ -139,8 +139,8 @@ Every theme must export a default object typed as `ThemeSpec`. The contract is d
 
 | Field          | Type                   | Purpose                                                    |
 | -------------- | ---------------------- | ---------------------------------------------------------- |
-| `name`         | `"theme1" \| "theme2"` | Unique identifier                                          |
-| `designSystem` | `"theme1" \| "theme2"` | Design system key used by `createStyles` dispatch          |
+| `name`         | `"novapay" \| "canvara"` | Unique identifier                                          |
+| `designSystem` | `"novapay" \| "canvara"` | Design system key used by `createStyles` dispatch          |
 | `palette`      | `ThemeSpecPalette`     | Semantic color roles                                       |
 | `typography`   | `ThemeSpecTypography`  | Font families, sizes, weights                              |
 | `shadows`      | `string[]`             | 14-element elevation shadow array                          |

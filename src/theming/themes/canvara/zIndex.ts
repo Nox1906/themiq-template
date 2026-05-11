@@ -1,9 +1,9 @@
 import type { ThemeSpecZIndex } from "../spec/zIndex";
 
 /**
- * Theme2 z-index scale.
+ * Canvara z-index scale.
  *
- * Currently identical to Theme1 and MUI defaults. Components should always
+ * Currently identical to Novapay and MUI defaults. Components should always
  * read from `theme.zIndex` instead of using hard-coded values.
  *
  * ### Usage

@@ -31,7 +31,7 @@ export default function ThemeWrapper({
   children,
 }: ThemeWrapperProps) {
   const selectedTheme = React.useMemo(() => {
-    const themeSpec = themesByName[themeName] || themesByName["theme1"];
+    const themeSpec = themesByName[themeName] || themesByName["novapay"];
     const theme = getTheme(themeSpec);
     return theme;
   }, [themeName]);

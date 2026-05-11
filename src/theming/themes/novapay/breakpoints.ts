@@ -1,7 +1,7 @@
 import type { ThemeSpecBreakpoints } from "../spec/breakpoints";
 
 /**
- * Theme1 breakpoint values.
+ * Novapay breakpoint values.
  *
  * All values are in pixels and represent the **minimum** viewport width at
  * which the corresponding breakpoint activates.

@@ -83,9 +83,9 @@ export default function PlatformTheme({ children }: React.PropsWithChildren) {
     if (!spec) {
       console.warn(
         `[PlatformTheme] Theme "${themeName}" not found in themesByName. ` +
-          `Falling back to "theme1". Check that the theme is exported from themes/index.ts.`,
+          `Falling back to "novapay". Check that the theme is exported from themes/index.ts.`,
       );
-      return getTheme(themesByName["theme1"]);
+      return getTheme(themesByName["novapay"]);
     }
 
     return getTheme(spec);

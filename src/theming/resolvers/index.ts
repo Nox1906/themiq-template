@@ -40,10 +40,10 @@ export const useThemeResolver = createUrlSlugResolver({
    * `/my-app/dashboard`).
    */
   slugMapping: {
-    "theme1-app": "theme1",
-    "theme2-app": "theme2",
+    "novapay-app": "novapay",
+    "canvara-app": "canvara",
   },
 
   /** Theme used when no slug matches or the URL has no first segment. */
-  fallback: "theme1",
+  fallback: "novapay",
 });

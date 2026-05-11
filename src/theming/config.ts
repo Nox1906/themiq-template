@@ -27,7 +27,7 @@ type AppParams = { appSlug: string };
  * matching the intent of selecting a theme from the URL before React mounts.
  *
  * Examples:
- * - URL `/theme1-app/dashboard` → `appSlug = "theme1-app"`
+ * - URL `/novapay-app/dashboard` → `appSlug = "novapay-app"`
  * - URL `/` → `appSlug = undefined`
  */
 const appParams = matchPath(
@@ -45,15 +45,15 @@ const appParams = matchPath(
  * 1. At module load time, `/:appSlug` is extracted from the URL
  * 2. The slug is looked up in `slugsToThemeMapping`
  * 3. If a match is found → return `[mappedThemeName]` (single-element array)
- * 4. If no match (unknown slug or no slug) → fall back to `["theme1"]`
+ * 4. If no match (unknown slug or no slug) → fall back to `["novapay"]`
  * 5. If `themes` is empty → return it as-is (no themes registered)
  *
  * ### Registering a new app slug → theme mapping
  * In `PlatformTheme.tsx`, extend the `slugsToThemeMapping` argument:
  * ```ts
- * pickAvailableTheme(["theme1", "theme2", "theme3"], {
- *   "theme1-app":  "theme1",
- *   "theme2-app":  "theme2",
+ * pickAvailableTheme(["novapay", "canvara", "theme3"], {
+ *   "novapay-app":  "novapay",
+ *   "canvara-app":  "canvara",
  *   "my-new-app":  "theme3",  // ← new entry
  * });
  * ```

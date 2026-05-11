@@ -5,8 +5,8 @@
  * current URL (`/:appSlug`) against a developer-supplied mapping.
  *
  * Examples:
- * - `/theme1-app/dashboard`  →  `"theme1"`
- * - `/theme2-app/settings`   →  `"theme2"`
+ * - `/novapay-app/dashboard`  →  `"novapay"`
+ * - `/canvara-app/settings`   →  `"canvara"`
  * - `/`                      →  `config.fallback`
  *
  * ### Characteristics
@@ -28,10 +28,10 @@
  *
  * export const useThemeResolver = createUrlSlugResolver({
  *   slugMapping: {
- *     'my-app':      'theme1',
- *     'admin-portal': 'theme2',
+ *     'my-app':      'novapay',
+ *     'admin-portal': 'canvara',
  *   },
- *   fallback: 'theme1',
+ *   fallback: 'novapay',
  * });
  * ```
  */
@@ -68,8 +68,8 @@ export interface UrlSlugResolverConfig extends ResolverConfig {
    * Append an entry here — no other file needs to change:
    * ```ts
    * slugMapping: {
-   *   'existing-app': 'theme1',
-   *   'new-app':      'theme2',  // ← new entry
+   *   'existing-app': 'novapay',
+   *   'new-app':      'canvara',  // ← new entry
    * }
    * ```
    */

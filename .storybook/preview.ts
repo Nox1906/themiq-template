@@ -19,10 +19,10 @@ const preview: Preview = {
   decorators: [
     withThemeFromJSXProvider({
       themes: {
-        theme1: themes.Theme1,
-        theme2: themes.Theme2,
+        novapay: themes.Novapay,
+        canvara: themes.Canvara,
       },
-      defaultTheme: "theme1",
+      defaultTheme: "novapay",
       Provider: ({
         theme,
         children,

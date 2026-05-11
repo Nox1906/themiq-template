@@ -1,7 +1,7 @@
 import type { ThemeSpecZIndex } from "../spec/zIndex";
 
 /**
- * Theme1 z-index scale.
+ * Novapay z-index scale.
  *
  * Passed to `createTheme({ zIndex: … })` and available at runtime via
  * `theme.zIndex.<layer>`. Components should always read from the theme instead

@@ -81,12 +81,12 @@ Instead, `preview.ts` uses `withThemeFromJSXProvider` to present a theme dropdow
 
 ```
 Toolbar dropdown
-    │  theme name (e.g. "theme2")
+    │  theme name (e.g. "canvara")
     ▼
 ThemeWrapper.tsx
-    │  getTheme(themesByName["theme2"])
+    │  getTheme(themesByName["canvara"])
     ▼
-MUI ThemeProvider  →  story renders with theme2 tokens
+MUI ThemeProvider  →  story renders with canvara tokens
 ```
 
 ### Registering a new theme in Storybook
@@ -99,11 +99,11 @@ import * as themes from '../src/theming/themes';
 
 withThemeFromJSXProvider({
   themes: {
-    theme1: themes.Theme1,
-    theme2: themes.Theme2,
+    novapay: themes.Novapay,
+    canvara: themes.Canvara,
     myTheme: themes.MyTheme,  // ← new entry
   },
-  defaultTheme: 'theme1',
+  defaultTheme: 'novapay',
   ...
 })
 ```
@@ -126,7 +126,7 @@ import { ThemeNameContext } from '../src/theming/resolvers/propInjection';
 
 decorators: [
   (Story, { globals }) => (
-    <ThemeNameContext.Provider value={globals.theme ?? 'theme1'}>
+    <ThemeNameContext.Provider value={globals.theme ?? 'novapay'}>
       <Story />
     </ThemeNameContext.Provider>
   ),

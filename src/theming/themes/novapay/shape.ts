@@ -1,7 +1,7 @@
 import type { ThemeSpecShape } from "../spec/shape";
 
 /**
- * Theme1 shape scale.
+ * Novapay shape scale.
  *
  * Provides a named border-radius scale for components. Use these values
  * instead of hard-coded pixels so radius choices are consistent and

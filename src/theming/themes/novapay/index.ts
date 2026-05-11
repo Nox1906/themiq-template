@@ -20,24 +20,24 @@ import zIndex from "./zIndex";
 export const spacing = 4;
 
 /**
- * Theme1-specific type, narrowing the shared {@link ThemeSpec} contract.
+ * Novapay-specific type, narrowing the shared {@link ThemeSpec} contract.
  *
- * Intersect here to add Theme1-only fields:
+ * Intersect here to add Novapay-only fields:
  * ```ts
- * export type Theme1Spec = ThemeSpec & {
- *   name: "theme1";
- *   designSystem: "theme1";
- *   customBrandColor: string; // ← Theme1-only addition
+ * export type NovapaySpec = ThemeSpec & {
+ *   name: "novapay";
+ *   designSystem: "novapay";
+ *   customBrandColor: string; // ← Novapay-only addition
  * };
  * ```
  */
-export type Theme1Spec = ThemeSpec & {
-  name: "theme1";
-  designSystem: "theme1";
+export type NovapaySpec = ThemeSpec & {
+  name: "novapay";
+  designSystem: "novapay";
 };
 
 /**
- * Theme1 theme object implementing the {@link ThemeSpec} contract.
+ * Novapay theme object implementing the {@link ThemeSpec} contract.
  *
  * ### What each file controls
  * | File              | Controls                                              |
@@ -53,16 +53,16 @@ export type Theme1Spec = ThemeSpec & {
  *
  * ### Using this theme
  * ```ts
- * import { Theme1 } from "src/theming/themes";
+ * import { Novapay } from "src/theming/themes";
  * import { getTheme } from "src/theming/utils";
  * import { createTheme } from "@mui/material/styles";
  *
- * const muiTheme = createTheme(getTheme(Theme1));
+ * const muiTheme = createTheme(getTheme(Novapay));
  * ```
  */
-const theme: Theme1Spec = {
-  name: "theme1",
-  designSystem: "theme1",
+const theme: NovapaySpec = {
+  name: "novapay",
+  designSystem: "novapay",
   typography,
   palette,
   shadows,

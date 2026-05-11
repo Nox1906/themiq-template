@@ -1,11 +1,13 @@
 import type { ThemeSpecTransitions } from "../spec/transitions";
 
 /**
- * Theme2 transition timing.
+ * Novapay transition timing.
  *
- * Currently mirrors Theme1 (MUI defaults). Adjust here to give Theme2
- * a different motion personality — e.g. longer durations for a more
- * expressive consumer product feel.
+ * These values are passed to `createTheme({ transitions: … })` and available
+ * at runtime via `theme.transitions.duration` and `theme.transitions.easing`.
+ *
+ * Values match MUI's defaults — adjust them here to give Novapay a faster
+ * or slower motion personality without changing individual components.
  *
  * ### Usage in a component
  * ```tsx
@@ -17,6 +19,20 @@ import type { ThemeSpecTransitions } from "../spec/transitions";
  *     }),
  *   }}
  * />
+ * ```
+ *
+ * ### Making the whole theme feel snappier
+ * Reduce all durations proportionally:
+ * ```ts
+ * duration: {
+ *   shortest:       100,
+ *   shorter:        150,
+ *   short:          200,
+ *   standard:       250,
+ *   complex:        300,
+ *   enteringScreen: 175,
+ *   leavingScreen:  150,
+ * }
  * ```
  */
 const transitions: ThemeSpecTransitions = {

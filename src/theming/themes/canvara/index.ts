@@ -20,27 +20,27 @@ import zIndex from "./zIndex";
 export const spacing = 4;
 
 /**
- * Theme2-specific type, narrowing the shared {@link ThemeSpec} contract.
+ * Canvara-specific type, narrowing the shared {@link ThemeSpec} contract.
  *
- * Intersect here to add Theme2-only fields:
+ * Intersect here to add Canvara-only fields:
  * ```ts
- * export type Theme2Spec = ThemeSpec & {
- *   name: "theme2";
- *   designSystem: "theme2";
- *   customBrandColor: string; // ← Theme2-only addition
+ * export type CanvaraSpec = ThemeSpec & {
+ *   name: "canvara";
+ *   designSystem: "canvara";
+ *   customBrandColor: string; // ← Canvara-only addition
  * };
  * ```
  */
-export type Theme2Spec = ThemeSpec & {
-  name: "theme2";
-  designSystem: "theme2";
+export type CanvaraSpec = ThemeSpec & {
+  name: "canvara";
+  designSystem: "canvara";
 };
 
 /**
- * Theme2 theme object implementing the {@link ThemeSpec} contract.
+ * Canvara theme object implementing the {@link ThemeSpec} contract.
  *
- * Theme2 uses **Inter** as its primary font, distinguishing it from
- * Theme1 which uses Helvetica/Arial. All other values are intentionally
+ * Canvara uses **Inter** as its primary font, distinguishing it from
+ * Novapay which uses Helvetica/Arial. All other values are intentionally
  * identical and can be diverged as the design evolves.
  *
  * ### What each file controls
@@ -57,16 +57,16 @@ export type Theme2Spec = ThemeSpec & {
  *
  * ### Using this theme
  * ```ts
- * import { Theme2 } from "src/theming/themes";
+ * import { Canvara } from "src/theming/themes";
  * import { getTheme } from "src/theming/utils";
  * import { createTheme } from "@mui/material/styles";
  *
- * const muiTheme = createTheme(getTheme(Theme2));
+ * const muiTheme = createTheme(getTheme(Canvara));
  * ```
  */
-const theme: Theme2Spec = {
-  name: "theme2",
-  designSystem: "theme2",
+const theme: CanvaraSpec = {
+  name: "canvara",
+  designSystem: "canvara",
   typography,
   palette,
   shadows,

@@ -1,2 +1,2 @@
-export { default as Theme1 } from "./theme1";
-export { default as Theme2 } from "./theme2";
+export { default as Novapay } from "./novapay";
+export { default as Canvara } from "./canvara";

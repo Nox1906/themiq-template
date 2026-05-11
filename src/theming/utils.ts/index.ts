@@ -7,10 +7,10 @@
  * when consuming a theme:
  * ```ts
  * import { getTheme } from "src/theming/utils.ts";
- * import { Theme1 } from "src/theming/themes";
+ * import { Novapay } from "src/theming/themes";
  * import { createTheme } from "@mui/material/styles";
  *
- * const muiTheme = createTheme(getTheme(Theme1));
+ * const muiTheme = createTheme(getTheme(Novapay));
  * ```
  *
  * Internal helpers (`createShadows`) are intentionally not re-exported because

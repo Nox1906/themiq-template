@@ -23,7 +23,7 @@ type MakeStylesReturn<
 /**
  * A style definition accepted by `createStyles`. Can be either:
  * - A **per-design-system map** keyed by the uppercase design system names
- *   (`THEME1`, `THEME2`, …). Each value is a style function or object for
+ *   (`NOVAPAY`, `CANVARA`, …). Each value is a style function or object for
  *   that specific design system.
  * - A **single shared definition** (function or static object) applied to
  *   every design system.
@@ -92,8 +92,8 @@ function isDesignSystemConfig<
 > {
   // if a new design system is added, TS will signal that this needs to be updated
   const designSystems: Record<Uppercase<ThemeSpecDesignSystem>, true> = {
-    THEME1: true,
-    THEME2: true,
+    NOVAPAY: true,
+    CANVARA: true,
   };
 
   return R.keys(designSystems).every((key) =>
@@ -121,7 +121,7 @@ function isDesignSystemConfig<
  *
  * ## How it works
  *
- * 1. You pass a style map keyed by `THEME1` / `THEME2` (uppercase design system
+ * 1. You pass a style map keyed by `NOVAPAY` / `CANVARA` (uppercase design system
  *    names). Each value is either a static CSS object or a function
  *    `(theme, params, classes, cssVars) => CSSObject`.
  * 2. At runtime, `createStyles` reads `theme.designSystem` from the active MUI
@@ -144,10 +144,10 @@ function isDesignSystemConfig<
  * ```ts
  * // Button.styles.ts
  * export default createStyles({
- *   THEME1: (theme) => ({
+ *   NOVAPAY: (theme) => ({
  *     root: { background: theme.palette.primary.main },
  *   }),
- *   THEME2: (theme) => ({
+ *   CANVARA: (theme) => ({
  *     root: { background: theme.palette.secondary.main },
  *   }),
  * });
@@ -166,10 +166,10 @@ function isDesignSystemConfig<
  * ```ts
  * // Typography.styles.ts
  * export default createStyles<never, { maxLines?: number }>({
- *   THEME1: (_, { maxLines }) => ({
+ *   NOVAPAY: (_, { maxLines }) => ({
  *     root: { WebkitLineClamp: maxLines },
  *   }),
- *   THEME2: (_, { maxLines }) => ({
+ *   CANVARA: (_, { maxLines }) => ({
  *     root: { WebkitLineClamp: maxLines },
  *   }),
  * });
@@ -189,7 +189,7 @@ function isDesignSystemConfig<
  * ```ts
  * // Component.styles.ts — first arg is the variable name array
  * export default createStyles(['accentColor'], {
- *   THEME1: (theme, _, __, cssVars) => ({
+ *   NOVAPAY: (theme, _, __, cssVars) => ({
  *     root: {
  *       color: cssVars('accentColor').value(theme.palette.primary.main),
  *     },
@@ -203,7 +203,7 @@ function isDesignSystemConfig<
  * **Referencing another rule inside a nested selector:**
  * ```ts
  * export default createStyles<never, never, 'label'>({
- *   THEME1: (theme) => ({
+ *   NOVAPAY: (theme) => ({
  *     label: { color: theme.palette.text.secondary },
  *     root: {
  *       '&:hover $label': { color: theme.palette.text.primary },

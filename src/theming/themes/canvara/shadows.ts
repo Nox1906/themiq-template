@@ -2,7 +2,7 @@ import primitives from "../primitives";
 import { ShadowIndex } from "../spec/shadows";
 
 /**
- * Theme2 shadow array.
+ * Canvara shadow array.
  *
  * Each entry is a CSS `box-shadow` string, accessed by numeric index.
  * Use the {@link ShadowIndex} constants to avoid magic numbers:
