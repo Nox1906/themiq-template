@@ -134,6 +134,13 @@ const palette: ThemeSpecPalette = {
   background: {
     default: primitives.white,
   },
+
+  /** Text colors — explicit per-brand overrides for MUI's palette.text. */
+  text: {
+    primary: primitives.stone[900],
+    secondary: primitives.stone[600],
+    disabled: primitives.stone[300],
+  },
 };
 
 export default palette;

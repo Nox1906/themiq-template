@@ -108,4 +108,17 @@ export type ThemeSpecPalette = {
     /** Default page background */
     default: string;
   };
+  /**
+   * Text colors — maps directly to MUI's `palette.text` and overrides its
+   * automatically derived defaults. Define per-brand to ensure text contrast
+   * is intentional rather than inferred.
+   */
+  text: {
+    /** Primary body text — highest contrast, used for headings and body copy */
+    primary: string;
+    /** Secondary / muted text — captions, placeholders, helper text */
+    secondary: string;
+    /** Text on disabled elements */
+    disabled: string;
+  };
 };
