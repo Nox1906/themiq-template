@@ -13,14 +13,14 @@
  * 1. Replace the import at the top of this file with the desired resolver module.
  * 2. Replace the factory call + configuration object below.
  *
- * For more resolver types, see **Themiq Pro** — https://themiq.io/pro
+ * For more resolver types, see **Themiq Pro** — https://themiqpro.com
  */
 
 // ─── Active resolver ─────────────────────────────────────────────────────────
 // Change THIS import to switch strategies. Uncomment the one you want and
 // remove or comment out the current one.
 
-// For more resolver types, see Themiq Pro — https://themiq.io/pro
+// For more resolver types, see Themiq Pro — https://themiqpro.com
 import { createUrlSlugResolver } from "./urlSlug";
 
 // ─── Resolver configuration ───────────────────────────────────────────────────

@@ -20,7 +20,7 @@ Noncommercial purposes are any purposes other than paid work, work for which you
 
 To use this software for commercial purposes — including deploying it as part of a client project, a SaaS product, or any revenue-generating application — you must obtain a commercial license from the copyright holder.
 
-Contact: <https://themiq.io/pro> · contact@themiq.io
+Contact: - Website: https://themiqpro.com - Email: hello@themiqpro.com
 
 ## Conditions
 

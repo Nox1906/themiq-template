@@ -21,15 +21,15 @@ A production-ready React + MUI platform with a type-safe theming architecture. U
 
 ## Why Themiq?
 
-|                               | Without Themiq                                   | With Themiq                                                   |
-| ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
-| **Start with one theme**      | Scattered hex strings, no contract               | Type-safe `ThemeSpec` — one file to change any token          |
-| **Scale to multiple brands**  | Duplicate codebase per brand                     | Add a theme folder, register one resolver mapping             |
-| **Change primary color**      | grep-replace across all files                    | Edit one value in `palette.ts`                                |
-| **Switch selection strategy** | Rewrite app entrypoint logic                     | Change one import in `resolvers/index.ts`                     |
-| **Type safety**               | None — raw strings and magic hex codes           | Full — `ThemeSpec` contract enforced at compile time          |
-| **Component code**            | `sx={{ color: '#007AFF' }}` hard-coded           | `sx={{ color: theme.palette.primary.main }}` — always correct |
-| **Maintenance cost**          | Grows with every brand or color change           | Flat — adding brand N costs the same as adding brand 2        |
+|                               | Without Themiq                         | With Themiq                                                   |
+| ----------------------------- | -------------------------------------- | ------------------------------------------------------------- |
+| **Start with one theme**      | Scattered hex strings, no contract     | Type-safe `ThemeSpec` — one file to change any token          |
+| **Scale to multiple brands**  | Duplicate codebase per brand           | Add a theme folder, register one resolver mapping             |
+| **Change primary color**      | grep-replace across all files          | Edit one value in `palette.ts`                                |
+| **Switch selection strategy** | Rewrite app entrypoint logic           | Change one import in `resolvers/index.ts`                     |
+| **Type safety**               | None — raw strings and magic hex codes | Full — `ThemeSpec` contract enforced at compile time          |
+| **Component code**            | `sx={{ color: '#007AFF' }}` hard-coded | `sx={{ color: theme.palette.primary.main }}` — always correct |
+| **Maintenance cost**          | Grows with every brand or color change | Flat — adding brand N costs the same as adding brand 2        |
 
 > Themiq works with one brand today and is ready for ten tomorrow — without any refactoring.
 >
@@ -162,7 +162,7 @@ Open `src/theming/resolvers/index.ts` and swap the import + factory call. That i
 
 This template includes the **URL slug** resolver. It selects a theme from the first URL path segment — e.g. `/novapay-app/` activates `novapay`.
 
-> **Need a different strategy?** 11 additional resolvers are available in **[Themiq Pro](https://themiq.io/pro)**.
+> **Need a different strategy?** 11 additional resolvers are available in **[Themiq Pro](https://themiqpro.com)**.
 
 **Add a new theme:**
 
@@ -218,8 +218,8 @@ import { createStyles } from "../../utils";
 
 export default createStyles((theme) => ({
   root: {
-    color: theme.palette.primary.main,       // ← from ThemeSpec palette
-    borderRadius: theme.shape.sm,            // ← from ThemeSpec shape
+    color: theme.palette.primary.main, // ← from ThemeSpec palette
+    borderRadius: theme.shape.sm, // ← from ThemeSpec shape
     fontSize: theme.typography.body1.fontSize, // ← from ThemeSpec typography
   },
 }));
@@ -254,8 +254,8 @@ Configured in both `tsconfig.app.json` (for TypeScript) and `vite.config.ts` (fo
 
 This template includes two fully styled themes and a demo page. Run `npm run dev` and open the URLs below to see them side-by-side:
 
-| URL                                 | Theme                                                |
-| ----------------------------------- | ---------------------------------------------------- |
+| URL                                  | Theme                                                |
+| ------------------------------------ | ---------------------------------------------------- |
 | `http://localhost:5173/novapay-app/` | **Theme 1 — Acme Enterprise** (teal, sharp, Inter)   |
 | `http://localhost:5173/canvara-app/` | **Theme 2 — Friendly Co.** (purple, rounded, Nunito) |
 

@@ -47,7 +47,7 @@ export const useThemeResolver = createUrlSlugResolver({ ... });
 
 No other file needs to change.
 
-> **Themiq Pro:** Need a different selection strategy? More resolver types are available in **[Themiq Pro](https://themiq.io/pro)**.
+> **Themiq Pro:** Need a different selection strategy? More resolver types are available in **[Themiq Pro](https://themiqpro.com)**.
 
 ---
 
@@ -107,7 +107,7 @@ src/theming/
 │   ├── index.ts               # ← THE ONLY FILE YOU EDIT to switch strategy
 │   ├── types.ts               # UseThemeResolver / UseOptionalThemeResolver
 │   └── urlSlug.ts             # URL first-path-segment strategy (included)
-│   # 11 additional strategies available in Themiq Pro — https://themiq.io/pro
+│   # 11 additional strategies available in Themiq Pro — https://themiqpro.com
 │
 ├── themes/
 │   ├── index.ts               # Re-exports all theme objects
@@ -137,18 +137,18 @@ src/theming/
 
 Every theme must export a default object typed as `ThemeSpec`. The contract is defined in `themes/spec/index.ts` and includes:
 
-| Field          | Type                   | Purpose                                                    |
-| -------------- | ---------------------- | ---------------------------------------------------------- |
+| Field          | Type                     | Purpose                                                    |
+| -------------- | ------------------------ | ---------------------------------------------------------- |
 | `name`         | `"novapay" \| "canvara"` | Unique identifier                                          |
 | `designSystem` | `"novapay" \| "canvara"` | Design system key used by `createStyles` dispatch          |
-| `palette`      | `ThemeSpecPalette`     | Semantic color roles                                       |
-| `typography`   | `ThemeSpecTypography`  | Font families, sizes, weights                              |
-| `shadows`      | `string[]`             | 14-element elevation shadow array                          |
-| `shape`        | `ThemeSpecShape`       | Named border-radius scale                                  |
-| `breakpoints`  | `ThemeSpecBreakpoints` | Viewport breakpoint values (`xxs`–`xl`)                    |
-| `transitions`  | `ThemeSpecTransitions` | Animation durations and easing curves                      |
-| `zIndex`       | `ThemeSpecZIndex`      | Layer stacking constants                                   |
-| `spacing`      | `number`               | Base spacing unit in px (multiplied by `theme.spacing(n)`) |
+| `palette`      | `ThemeSpecPalette`       | Semantic color roles                                       |
+| `typography`   | `ThemeSpecTypography`    | Font families, sizes, weights                              |
+| `shadows`      | `string[]`               | 14-element elevation shadow array                          |
+| `shape`        | `ThemeSpecShape`         | Named border-radius scale                                  |
+| `breakpoints`  | `ThemeSpecBreakpoints`   | Viewport breakpoint values (`xxs`–`xl`)                    |
+| `transitions`  | `ThemeSpecTransitions`   | Animation durations and easing curves                      |
+| `zIndex`       | `ThemeSpecZIndex`        | Layer stacking constants                                   |
+| `spacing`      | `number`                 | Base spacing unit in px (multiplied by `theme.spacing(n)`) |
 
 ---
 
